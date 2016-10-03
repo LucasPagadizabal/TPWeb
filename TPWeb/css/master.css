@@ -1,0 +1,72 @@
+#mostrarTabla{
+  margin: 1%;
+  margin-left: 20px;
+}
+#carrusel{
+  margin-top: 6%;
+}
+
+
+body{
+  overflow-x: hidden;
+  background-image: url(../img/move.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+img{
+  opacity: 0.8;
+}
+a img{
+  height: 20%;
+  width: 31%;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+footer{
+  text-align: center;
+}
+iframe{
+  width: 80%;
+}
+@media screen and (min-width: 480px) {
+  iframe {
+      height: 400px;
+  }
+}
+form{
+  font-weight: bold;
+}
+.panel{
+  padding: 1%;
+  margin: 5%;
+  margin-bottom: 1%;
+  width: 90%;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(95, 106, 106, 0.2);
+}
+.texto{
+  margin: 2%;
+  text-align: center;
+}
+.publicidad{
+  width: 100%;
+}
+.publicidad img{
+  opacity: 1;
+  width: 30%;
+}
+.social{
+  font-size: 20px;
+}
+.alerta-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.alerta-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
