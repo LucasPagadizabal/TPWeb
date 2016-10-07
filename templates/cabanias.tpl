@@ -13,9 +13,13 @@
         <a class="eliminarCabania" href="#" data-idcabania="{$cabania['id_cabania']}">Eliminar</a>
         <a class="editarCabania" href="#" data-idcabania="{$cabania['id_cabania']}">Editar</a>
         {if $cabania["ocupada"]}
-            Desocupada
+          <h3  class="col-md-offset-5">
+             Ocupada
+           </h3>
           {else}
-            Ocupada
+          <h3 class="col-md-offset-5">
+            Desocupada
+          </h3>
         {/if}
     </div>
 

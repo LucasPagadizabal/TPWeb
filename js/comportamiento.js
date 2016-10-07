@@ -15,9 +15,8 @@ $(document).on("click", ".eliminarCabania", function(){
   });
 });
 
-$(document).on("click", ".editarCabania", function(event){
+$(document).on("click", ".editarCabania", function(){
   event.preventDefault();
-  alert("entro");
   $.get("index.php?action=editar",{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
     $('#listaCabanias').html(data);
   });

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-07 20:07:06
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-07 22:23:09
          compiled from ".\templates\cabanias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1925257f7d11a8651d5-26230494%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a6b742f9443fd2eb7cfb3cd64aa8c2d5e46bcf75' => 
     array (
       0 => '.\\templates\\cabanias.tpl',
-      1 => 1475863623,
+      1 => 1475871786,
       2 => 'file',
     ),
   ),
@@ -50,9 +50,13 @@ $_smarty_tpl->tpl_vars['cabania']->_loop = true;
         <a class="editarCabania" href="#" data-idcabania="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
 ">Editar</a>
         <?php if ($_smarty_tpl->tpl_vars['cabania']->value["ocupada"]){?>
-            Desocupada
+          <h3  class="col-md-offset-5">
+             Ocupada
+           </h3>
           <?php }else{ ?>
-            Ocupada
+          <h3 class="col-md-offset-5">
+            Desocupada
+          </h3>
         <?php }?>
     </div>
 
