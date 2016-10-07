@@ -44,6 +44,12 @@ class CabaniaController{
     $this->view->mostrarListaCabanias($cabanias);
   }
 
+  function editarCabania(){
+    $id_cabania = $_GET["id_cabania"];
+    $this->model->editarCabania($id_cabania);
+    $this->mostrarListaCabanias();
+
+  }
 }
 
  ?>

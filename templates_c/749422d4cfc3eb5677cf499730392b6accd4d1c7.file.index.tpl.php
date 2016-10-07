@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-07 16:29:23
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-07 18:45:14
          compiled from ".\templates\index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2780357f7a6e33cea63-78234781%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:723857f7d11a759550-67338620%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2780357f7a6e33cea63-78234781',
+  'nocache_hash' => '723857f7d11a759550-67338620',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_57f7a6e3473536_80423834',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_57f7d11a7fc7c4_46189830',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57f7a6e3473536_80423834')) {function content_57f7a6e3473536_80423834($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_57f7d11a7fc7c4_46189830')) {function content_57f7d11a7fc7c4_46189830($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
 
 <div id="listaCabanias">

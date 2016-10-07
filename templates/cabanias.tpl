@@ -11,6 +11,12 @@
           <a href="index.php?action=cabania&id={$cabania['id_cabania']}">Ver mas </a>
         </p>
         <a class="eliminarCabania" href="#" data-idcabania="{$cabania['id_cabania']}">Eliminar</a>
+        <a class="editarCabania" href="#" data-idcabania="{$cabania['id_cabania']}">Editar</a>
+        {if $cabania["ocupada"]}
+            Desocupada
+          {else}
+            Ocupada
+        {/if}
     </div>
 
 

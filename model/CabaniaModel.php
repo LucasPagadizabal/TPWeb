@@ -49,6 +49,14 @@ class CabaniaModel{
     $sentencia->execute(array($id_cabania));
   }
 
+  function editarCabania($id_cabania){
+    $cabania = $this->getCabania($id_cabania);
+    $sentencia = $this->db->prepare("update cabania set ocupada=? where id_cabania=?");
+    $sentencia->execute(array(!$cabania["ocupada"],$id_cabania));
+  }
+
+
+
 }
 
 

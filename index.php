@@ -25,6 +25,11 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   case ConfigApp::$ACTION_DELETE_CABANIA:
   $CabaniaController->borrarCabania();
   break;
+
+  case ConfigApp::$ACTION_EDITAR_CABANIA:
+  
+  $CabaniaController->editarCabania();
+  break;
 }
 
 

@@ -14,6 +14,16 @@ $(document).on("click", ".eliminarCabania", function(){
     $('#listaCabanias').html(data);
   });
 });
+
+$(document).on("click", ".editarCabania", function(){
+  event.preventDefault();
+  $.get("index.php?action=editar",{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
+    $('#listaCabanias').html(data);
+  });
+});
+
+
+
 $("#formCabania").on("submit", function(){
   event.preventDefault();
   formData = new FormData(this);
@@ -72,4 +82,5 @@ function crearEstrellas(){
     $("#cantidadEstrellas").append('<img src="img/starRegular.png" alt="star"/>');
   }
 }
+
 crearEstrellas();
