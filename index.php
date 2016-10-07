@@ -5,6 +5,7 @@ require_once("controller/CabaniaController.php");
 
 $CabaniaController = new CabaniaController();
 
+
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
   // Home del sitio
   $CabaniaController->showCabanias();
@@ -23,10 +24,6 @@ switch($_REQUEST[ConfigApp::$ACTION]){
 
   case ConfigApp::$ACTION_DELETE_CABANIA:
   $CabaniaController->borrarCabania();
-  break;
-
-  case ConfigApp::$ACTION_COMOLLEGAR_CABANIA:
-  $CabaniaController->comoLlegar();
   break;
 }
 

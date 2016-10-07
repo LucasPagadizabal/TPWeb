@@ -14,15 +14,20 @@ class CabaniaView{
     $this->smarty->assign("cabanias",$cabanias);
     $this->smarty->display("index.tpl");
   }
+  function mostrarListaCabanias($cabanias){
+  $this->smarty->assign("cabanias",$cabanias);
+  $this->smarty->display("cabanias.tpl");
+}
 
   function mostrarCabania($cabania){
     $this->smarty->assign("cabania",$cabania);
     $this->smarty->display("cabaniaComentario.tpl");
   }
 
-  function comoLlegar(){
-    $this->smarty->assign("");
-    $this->smarty->display("comollegar.html");
+  function showCabaniaCreada($mensaje, $tipo){
+    $this->smarty->assign("mensaje", $mensaje);
+    $this->smarty->assign("tipoMensaje", $tipo);
+    //$this->smarty->display("cabania.tpl");
   }
 }
 

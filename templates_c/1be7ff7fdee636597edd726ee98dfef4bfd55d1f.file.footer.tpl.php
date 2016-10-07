@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-09-26 21:03:56
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-07 15:45:07
          compiled from ".\templates\footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1969957e14118903c31-98121482%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1778257f7a6e3645974-95277918%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1be7ff7fdee636597edd726ee98dfef4bfd55d1f' => 
     array (
       0 => '.\\templates\\footer.tpl',
-      1 => 1474916625,
+      1 => 1475847129,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1969957e14118903c31-98121482',
+  'nocache_hash' => '1778257f7a6e3645974-95277918',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_57e14118908c18_28948877',
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_57f7a6e3649933_29494704',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57e14118908c18_28948877')) {function content_57e14118908c18_28948877($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_57f7a6e3649933_29494704')) {function content_57f7a6e3649933_29494704($_smarty_tpl) {?></div>
 <footer>
   <div class="panel conteiner col-xs-12 col-md-10 col-md-offset-1">
     <small>Cabaña el Fuerte Tandil - 249 4325561</small>

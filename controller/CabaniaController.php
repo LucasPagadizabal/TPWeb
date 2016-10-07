@@ -24,21 +24,24 @@ class CabaniaController{
     $this->view->mostrarCabania($cabania);
   }
   function crearCabania(){
+    $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
     $categoria = $_POST['categoria'];
   //  echo $descripcion;
-    $this->model->crearCabania($descripcion,$categoria);
+    $this->model->crearCabania($nombre,$descripcion,$categoria);
+    $this->view->showCabaniaCreada("Se creo la cabaña correctamente.", "success");
     $this->showCabanias();
+    $this->mostrarListaCabanias();
+
   }
   function borrarCabania(){
     $id_cabania = $_GET["id_cabania"];
     $this->model->borrarCabania($id_cabania);
-    $cabanias = $this->model->getCabanias();
-    $this->view->mostrar($cabanias);
+    $this->mostrarListaCabanias();
   }
-//crear un controller para las pag estaticas
-  function comoLlegar(){
-    $this->view->comoLlegar();
+  function mostrarListaCabanias(){
+    $cabanias = $this->model->getCabanias();
+    $this->view->mostrarListaCabanias($cabanias);
   }
 
 }

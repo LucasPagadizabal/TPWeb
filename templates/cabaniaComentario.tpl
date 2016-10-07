@@ -1,7 +1,6 @@
 {include file="header.tpl"}
-<div class="panel texto">
-  <h1>Cabaña Nroº {$cabania["id_cabania"]} ---- {$cabania["categoria"]} Estrellas </h1>
-
+<div class="panel">
+  <h1>Cabaña {$cabania["nombre"]} <span id="cantidadEstrellas">{$cabania["id_categoria"]}</span> </h1>
     <p class="panel">
       {$cabania["comentarios"]}
     </p>

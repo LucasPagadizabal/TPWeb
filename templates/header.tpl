@@ -13,16 +13,14 @@
   <header>
     <nav>
       <ul class="nav nav-tabs nav-justified">
-        <li><a class="home" href="cabanias" id="btnHome"><strong>Home</strong></a></li>
-        <li><a href="#" id="btnServicios">Servicios</a></li>
-        <li><a href="#" id="btnReservas">Reservas</a></li>
-        <li><a href="#" id="btnContacto">Contacto</a></li>
-        <li><a class="nav-Element" href="comoLlegar" id="btnComoLLegar">Como Llegar</a></li>
-        <li><a href="#" id="btnTarifas">Tarifas</a></li>
-        <li role="presentation"><a href="#" id="btnQuienesSomos">Nosotros</a></li>
+        <li><a href="index.php"><strong>Home</strong></a></li>
+        <li><a class="nav-Element" href="servicios.html">Servicios</a></li>
+        <li><a class="nav-Element" href="reservas.html">Reservas</a></li>
+        <li><a class="nav-Element" href="contacto.html">Contacto</a></li>
+        <li><a class="nav-Element" href="comoLlegar.html" >Como Llegar</a></li>
+        <li><a class="nav-Element" href="tarifas.html">Tarifas</a></li>
+        <li><a class="nav-Element" href="quienessomos.html">Nosotros</a></li>
       </ul>
     </nav>
   </header>
   <div id="articulo">
-    
-  </div>

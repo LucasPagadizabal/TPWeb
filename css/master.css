@@ -38,6 +38,9 @@ iframe{
 form{
   font-weight: bold;
 }
+h1{
+  text-align: center;
+}
 .panel{
   padding: 1%;
   margin: 5%;

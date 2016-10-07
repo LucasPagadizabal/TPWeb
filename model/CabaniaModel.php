@@ -32,9 +32,9 @@ class CabaniaModel{
     $cabania["categoria"] = $this->getTipoCat($cabania["id_categoria"]);
     return $cabania;
   }
-  function crearCabania($descripcion,$categoria){
-    $sentencia = $this->db->prepare("INSERT INTO cabania(comentarios, id_categoria) VALUES(?,?)");
-    $sentencia->execute(array($descripcion, $categoria));
+  function crearCabania($nombre,$descripcion,$categoria){
+    $sentencia = $this->db->prepare("INSERT INTO cabania(nombre, comentarios, id_categoria) VALUES(?,?,?)");
+    $sentencia->execute(array($nombre, $descripcion, $categoria));
   }
 
 

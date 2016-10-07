@@ -1,14 +1,17 @@
 {include file="header.tpl"}
 
+<div id="listaCabanias">
+  {include file="cabanias.tpl"}
+</div>
+
 <div class="coteiner panel">
 <h1>Agregar cabaña</h1>
-<form class="" action="index.php?action=crearCabania" method="post">
+<form class="coteiner panel" id="formCabania" method="post" enctype="multipart/form-data">
+  <input type="text" name="nombre" value="" placeholder="Nombre de la cabaña">
   <input type="text" name="descripcion" value="" placeholder="Descripcion de la cabaña">
-  <input type="text" name="categoria" value="" placeholder="Categoria">
-  <p>
+  <input type="file" name="imagenes[]" required value="" multiple>
     Categoria:
-  </p>
-  <select class="form-control">
+  <select name="categoria">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -17,11 +20,7 @@
   </select>
   <button type="submit" name="button">Enviar</button>
 </form>
-</div>
-
-
-<div id="listaCabanias">
-  
+<div id="cabaniaCreadaMensaje"></div>
 </div>
 
 
