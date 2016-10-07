@@ -48,7 +48,6 @@ class CabaniaController{
     $id_cabania = $_GET["id_cabania"];
     $this->model->editarCabania($id_cabania);
     $this->mostrarListaCabanias();
-
   }
 }
 
