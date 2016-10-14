@@ -11,14 +11,21 @@ $(document).on("click", ".home", function(event){
 $(document).on("click", ".eliminarCabania", function(){
   event.preventDefault();
   $.get("index.php?action=borrarCabania",{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
-    $('#listaCabanias').html(data);
+    $('#articulo').html(data);
+  });
+});
+
+$(document).on("click", "#home", function(){
+  event.preventDefault();
+  $.get("index.php?action=cabanias", function(data) {
+    $('#articulo').html(data);
   });
 });
 
 $(document).on("click", ".editarCabania", function(){
   event.preventDefault();
   $.get("index.php?action=editar",{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
-    $('#listaCabanias').html(data);
+    $('#articulo').html(data);
   });
 });
 
@@ -34,21 +41,11 @@ $("#formCabania").on("submit", function(){
     contentType: false,
     cache: false,
     processData: false,
-    success: function(){
-      partialRenderHome("index.php");
+    success: function(data){
+      $("#articulo").html(data);
     }
   });
 });
-
-
-
-
-
-
-
-
-
-
 function partialRender(dir){
   $.ajax({
     url: dir,

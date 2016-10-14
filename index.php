@@ -8,7 +8,7 @@ $CabaniaController = new CabaniaController();
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
   // Home del sitio
-  $CabaniaController->showCabanias();
+  $CabaniaController->home();
   die();
 }
 switch($_REQUEST[ConfigApp::$ACTION]){
@@ -27,8 +27,17 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   break;
 
   case ConfigApp::$ACTION_EDITAR_CABANIA:
-  
+
   $CabaniaController->editarCabania();
+  break;
+
+  case ConfigApp::$ACTION_HOME:
+
+  $CabaniaController->home();
+  break;
+  case ConfigApp::$ACTION_SHOW_CABANIAS:
+
+  $CabaniaController->showCabanias();
   break;
 }
 

@@ -9,22 +9,26 @@ class CabaniaView{
     $this->smarty = new Smarty();
   }
 
-    function mostrar($cabanias){
+    function mostrar($cabanias, $administrador){
   //  print_r($cabanias);
     $this->smarty->assign("cabanias",$cabanias);
-    $this->smarty->display("index.tpl");
+    $this->smarty->assign("admin",$administrador);
+    $this->smarty->display("body.tpl");
   }
-  function mostrarListaCabanias($cabanias){
+  function mostrarListaCabanias($cabanias, $administrador){
+  $this->smarty->assign("admin",$administrador);
   $this->smarty->assign("cabanias",$cabanias);
   $this->smarty->display("cabanias.tpl");
 }
 
-  function mostrarCabania($cabania){
+  function mostrarCabania($cabania, $administrador){
+    $this->smarty->assign("admin",$administrador);
     $this->smarty->assign("cabania",$cabania);
     $this->smarty->display("cabaniaComentario.tpl");
   }
 
-  function showCabaniaCreada($mensaje, $tipo){
+  function showCabaniaCreada($mensaje, $tipo, $administrador){
+    $this->smarty->assign("admin",$administrador);
     $this->smarty->assign("mensaje", $mensaje);
     $this->smarty->assign("tipoMensaje", $tipo);
     //$this->smarty->display("cabania.tpl");
