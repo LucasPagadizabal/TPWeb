@@ -14,9 +14,13 @@ body{
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
+  font-size: 20px;
 }
-img{
+.carrusel {
+  margin-left: 28.8%;
   opacity: 0.8;
+  height: 640px;
+  width: 480px;
 }
 a img{
   height: 20%;
@@ -24,6 +28,15 @@ a img{
   margin-right: 1%;
   margin-left: 1%;
 }
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover
+ {
+   text-decoration:none;
+   cursor:pointer;
+  }
 footer{
   text-align: center;
 }
@@ -38,14 +51,14 @@ iframe{
 form{
   font-weight: bold;
 }
-h1{
+h1, h2, h3, h4{
   text-align: center;
 }
 .panel{
   padding: 1%;
-  margin: 5%;
+  margin: 2%;
   margin-bottom: 1%;
-  width: 90%;
+  width: 96%;
   border-radius: 5px 5px 5px 5px;
   background-color: rgba(95, 106, 106, 0.2);
 }
@@ -60,8 +73,8 @@ h1{
   opacity: 1;
   width: 30%;
 }
-.social{
-  font-size: 20px;
+.eliminarCabania{
+  float: right;
 }
 .alerta-success {
   color: #3c763d;

@@ -9,14 +9,10 @@ class CabaniaModel{
   }
 
   function getCabanias(){
-    //echo"entro a gets";
     $sentencia = $this->db->prepare("select * from cabania");
     $sentencia->execute();
-    //$cabanias = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-    //return $cabanias;
     $cabanias = array();
     while ($cabania = $sentencia->fetch(PDO::FETCH_ASSOC)) {
-      //print_r($cabania);
       $cabania["categoria"] = $this->getTipoCat($cabania["id_categoria"]);
       $cabanias[] = $cabania;
     }
@@ -32,16 +28,16 @@ class CabaniaModel{
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-
-
   function getCabania($id_cabania){
     $sentencia = $this->db->prepare("select * from cabania where id_cabania=?");
     $sentencia->execute(array($id_cabania));
     $cabania = $sentencia->fetch(PDO::FETCH_ASSOC);
 
     $cabania["categoria"] = $this->getTipoCat($cabania["id_categoria"]);
+    $cabania["imagenes"] = $this->getImagenes($cabania["id_cabania"]);
     return $cabania;
   }
+  
   function crearCabania($nombre,$descripcion,$categoria,$imagenes){
     $sentencia = $this->db->prepare("INSERT INTO cabania(nombre, comentarios, id_categoria) VALUES(?,?,?)");
     $sentencia->execute(array($nombre, $descripcion, $categoria));
@@ -49,7 +45,7 @@ class CabaniaModel{
     $id_cabania = $this->db->lastInsertId();
 
     $max = sizeof($imagenes["name"]);
-    
+
     for ($i=0; $i < $max; $i++) {
     $path="images/".uniqid()."_".$imagenes["name"][$i];
     move_uploaded_file($imagenes["tmp_name"][$i], $path);
@@ -70,19 +66,24 @@ class CabaniaModel{
     $sentencia->execute(array($id_cabania));
   }
 
-  function editarCabania($id_cabania){
+  function editarDisponibilidadCabania($id_cabania){
     $cabania = $this->getCabania($id_cabania);
     $sentencia = $this->db->prepare("update cabania set ocupada=? where id_cabania=?");
     $sentencia->execute(array(!$cabania["ocupada"],$id_cabania));
   }
-
-
-
+  function editCabania($id_cabania, $nuevaCategoria, $nuevoNombre, $nuevaDescripcion){
+    if (isset($nuevaCategoria)) {
+      $sentencia = $this->db->prepare("update cabania set id_categoria=? where id_cabania=?");
+      $sentencia->execute(array($nuevaCategoria, $id_cabania));
+    }
+    if (isset($nuevoNombre)) {
+      $sentencia = $this->db->prepare("update cabania set nombre=? where id_cabania=?");
+      $sentencia->execute(array($nuevoNombre, $id_cabania));
+    }
+    if (isset($nuevaDescripcion)) {
+      $sentencia = $this->db->prepare("update cabania set comentarios=? where id_cabania=?");
+      $sentencia->execute(array($nuevaDescripcion, $id_cabania));
+    }
+  }
 }
-
-
-
-
-
-
- ?>
+?>
