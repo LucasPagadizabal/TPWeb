@@ -37,7 +37,7 @@ class CabaniaModel{
     $cabania["imagenes"] = $this->getImagenes($cabania["id_cabania"]);
     return $cabania;
   }
-  
+
   function crearCabania($nombre,$descripcion,$categoria,$imagenes){
     $sentencia = $this->db->prepare("INSERT INTO cabania(nombre, comentarios, id_categoria) VALUES(?,?,?)");
     $sentencia->execute(array($nombre, $descripcion, $categoria));
@@ -72,15 +72,15 @@ class CabaniaModel{
     $sentencia->execute(array(!$cabania["ocupada"],$id_cabania));
   }
   function editCabania($id_cabania, $nuevaCategoria, $nuevoNombre, $nuevaDescripcion){
-    if (isset($nuevaCategoria)) {
+    if ($nuevaCategoria!="") {
       $sentencia = $this->db->prepare("update cabania set id_categoria=? where id_cabania=?");
       $sentencia->execute(array($nuevaCategoria, $id_cabania));
     }
-    if (isset($nuevoNombre)) {
+    if ($nuevoNombre!="") {
       $sentencia = $this->db->prepare("update cabania set nombre=? where id_cabania=?");
       $sentencia->execute(array($nuevoNombre, $id_cabania));
     }
-    if (isset($nuevaDescripcion)) {
+    if ($nuevaDescripcion!="") {
       $sentencia = $this->db->prepare("update cabania set comentarios=? where id_cabania=?");
       $sentencia->execute(array($nuevaDescripcion, $id_cabania));
     }

@@ -26,7 +26,6 @@ $(document).ready(function(){
       event.preventDefault();
       $.get("index.php?action=editarDispCabania",{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
         $('#articulo').html(data);
-        console.log("data");
         initDynamicEventHandlers();
       });
     });

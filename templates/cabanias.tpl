@@ -30,42 +30,45 @@
 {if isset($cabanias)}
 {foreach from=$cabanias item=cabania}
 <div class="panel">
-  <p>
     <a class="tituloCabania" data-idcabania="{$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
     <div class="panel">
       <p>
-        Pertenece a la categoria {$cabania["id_categoria"]} estrella/as.
+        <img class="img-responsive img-rounded imgSmall" src="{$cabania['imagenes'][0]['path']}" alt="Chania">
+        {$cabania["id_categoria"]} estrella/as.
       </p>
-    </p>
     <p>
       {$cabania["comentarios"]|truncate:15}
+
     </p>
   </div>
   {if isset($admin) && $admin }
-  <div class="conteiner panel">
-      Disponibilidad de la cabaña:
-      <button class="disponiblidadCabania btn btn-primary"  data-idcabania="{$cabania['id_cabania']}" type="button">Cambiar</button>
-    </div>
-    <div class="panel">
-      <button class="editarCabania btn btn-success"  data-idcabania="{$cabania['id_cabania']}" type="button">Editar Cabaña</button>
-      <button class="eliminarCabania btn btn-danger"  data-idcabania="{$cabania['id_cabania']}">ELIMINAR CABAÑA</button>
-    </div>
+  <div class="panel">
+    <button class="editarCabania btn btn-success"  data-idcabania="{$cabania['id_cabania']}" type="button">Editar Cabaña</button>
+    <button class="eliminarCabania btn btn-danger"  data-idcabania="{$cabania['id_cabania']}">ELIMINAR CABAÑA</button>
+  </div>
   {/if}
 
   <div class="cabaniaDisponibilidad">
+
     {if $cabania["ocupada"]}
     <div class="panel alerta-danger">
-      <h4 >NO DISPONIBLE</h4>
+        {if isset($admin) && $admin }
+        <button class="disponiblidadCabania btn btn-primary"  data-idcabania="{$cabania['id_cabania']}" type="button">Cambiar</button>
+        {/if}
+        <h4 >NO DISPONIBLE</h4>
+      </div>
+      {else}
+      <div class="panel alerta-success">
+          {if isset($admin) && $admin }
+          <button class="disponiblidadCabania btn btn-primary"  data-idcabania="{$cabania['id_cabania']}" type="button">Cambiar</button>
+          {/if}
+          <h4>DISPONIBLE</h4>
+        </div>
+        {/if}
+      </div>
     </div>
-    {else}
-    <div class="panel alerta-success">
-      <h4 class="alert-success">DISPONIBLE</h4>
-    </div>
+
+
+    {/foreach}
+
     {/if}
-  </div>
-</div>
-
-
-{/foreach}
-
-{/if}

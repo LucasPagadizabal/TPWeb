@@ -14,6 +14,7 @@ class CabaniaView{
   }
   function mostrarListaCabanias($cabanias){
     $this->smarty->assign("cabanias",$cabanias);
+    print_r($cabanias);
     $this->smarty->display("cabanias.tpl");
   }
   function mostrarCabania($cabania){

@@ -1,5 +1,9 @@
 <div class="panel">
-  <h1>Cabaña {$cabania["nombre"]} <span id="cantidadEstrellas">{$cabania["id_categoria"]}</span> </h1>
+  <h1>Cabaña {$cabania["nombre"]}  </h1>
+  <div class="panel">
+
+    <h1><span id="cantidadEstrellas">{$cabania["id_categoria"]}</span></h1>
+  </div>
   <p class="conteiner panel texto">
     {$cabania["comentarios"]}
   </p>
@@ -10,9 +14,9 @@
       <ol class="carousel-indicators">
         {foreach $cabania['imagenes'] as $imagen}
         {if $imagen@index eq 0}
-        <li data-target="#myCarousel" data-slide-to="{$imagen@index}" class="active"></li>
+        <li  data-slide-to="{$imagen@index}" class="active"></li>
         {else}
-        <li data-target="#myCarousel" data-slide-to="{$imagen@index}"></li>
+        <li  data-slide-to="{$imagen@index}"></li>
         {/if}
         {/foreach}
       </ol>
