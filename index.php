@@ -65,8 +65,22 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   $CategoriaController->buscarCabaniasCat();
   break;
 
-}
+  case ConfigApp::$ACTION_EDITOR_DE_CATEGORIAS:
+  $CategoriaController->iniciarEditor();
+  break;
 
+  case ConfigApp::$ACTION_EDITAR_CATEGORIAS:
+  $CategoriaController->editarCategoria();
+  break;
+
+  case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
+  $CategoriaController->eliminarCategoria();
+  break;
+
+  case ConfigApp::$ACTION_CREATE_CATEGORIA:
+  $CategoriaController->crearCategoria();
+  break;
+}
 
 
 ?>

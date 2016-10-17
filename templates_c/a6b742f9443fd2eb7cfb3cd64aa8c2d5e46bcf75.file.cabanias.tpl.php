@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-17 20:25:08
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-17 23:03:45
          compiled from ".\templates\cabanias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:242255804e8e858b4c0-97521664%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a6b742f9443fd2eb7cfb3cd64aa8c2d5e46bcf75' => 
     array (
       0 => '.\\templates\\cabanias.tpl',
-      1 => 1476728693,
+      1 => 1476738223,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'admin' => 0,
+    'categorias' => 0,
+    'categoria' => 0,
     'cabanias' => 0,
     'cabania' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5804e8e8651603_13297261')) {function content_5804e8e8651603_13297261($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb-master\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5804e8e8651603_13297261')) {function content_5804e8e8651603_13297261($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><?php if (isset($_smarty_tpl->tpl_vars['admin']->value)&&$_smarty_tpl->tpl_vars['admin']->value){?>
 <div class="coteiner panel">
   <h1>Crear nueva cabaña</h1>
@@ -42,12 +44,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="row">
       <div class="form-group col-xs-2">Categoria:
         <select class="form-control"  name="categoria">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select></div>
+          <?php  $_smarty_tpl->tpl_vars['categoria'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['categoria']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['categorias']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->key => $_smarty_tpl->tpl_vars['categoria']->value){
+$_smarty_tpl->tpl_vars['categoria']->_loop = true;
+?>
+          <option value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['estrella'];?>
+"><?php echo $_smarty_tpl->tpl_vars['categoria']->value["estrella"];?>
+</option>
+          <?php } ?>
+      </select>
+      <button id="editarCategoria" class="btn btn-success" type="button">Editar Categorias</button>
+      </div>
     </div>
     <div class="form-group"><button class="btn btn-primary" type="submit" name="button">Enviar</button></div>
   </form>

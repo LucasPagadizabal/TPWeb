@@ -18,12 +18,14 @@ class AdminView extends CabaniaView{
     $this->smarty->assign("admin",$administrador);
     $this->smarty->assign("tipoMensaje", $tipo);
   }
-  function mostrarListaCabanias($cabanias, $administrador){
+  function mostrarListaCabanias($cabanias, $administrador,$categoria){
     $this->smarty->assign("cabanias",$cabanias);
     $this->smarty->assign("admin",$administrador);
+    $this->smarty->assign("categorias",$categoria);
     $this->smarty->display("cabanias.tpl");
   }
-  function iniciarView($cabanias, $administrador){
+  function iniciarView($cabanias, $administrador,$categorias){
+    $this->smarty->assign("categorias",$categorias);
     $this->smarty->assign("cabanias",$cabanias);
     $this->smarty->assign("admin",$administrador);
     $this->smarty->display("body.tpl");

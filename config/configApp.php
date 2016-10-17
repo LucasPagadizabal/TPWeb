@@ -16,6 +16,11 @@ class ConfigApp{
   public static $ACTION_CATEGORIAS = "categorias";
   public static $ACTION_BUSCAR_CABANIAS = "buscarCabaniasCat";
 
+  public static $ACTION_EDITOR_DE_CATEGORIAS = "editorCategorias";
+  public static $ACTION_EDITAR_CATEGORIAS = "editarCategoria";
+  public static $ACTION_ELIMINAR_CATEGORIA = "eliminarCategoria";
+  public static $ACTION_CREATE_CATEGORIA = "crearCategoria";
+
 
 }
 

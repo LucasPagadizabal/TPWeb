@@ -8,8 +8,9 @@ class CategoriaView extends CabaniaView{
     parent::__construct();
   }
 
-  function iniciar(){
+  function iniciar($categorias){
     $this->smarty->assign("lista", false);
+    $this->smarty->assign("categorias",$categorias);
     $this->smarty->display("cabaniasPorCat.tpl");
   }
 
@@ -19,5 +20,11 @@ class CategoriaView extends CabaniaView{
     $this->smarty->assign("cabanias", $cabanias);
     $this->smarty->display("cabaniasPorCat.tpl");
   }
+
+  function mostrarEditor($categorias){
+    $this->smarty->assign("categorias",$categorias);
+    $this->smarty->display("editorCategorias.tpl");
+  }
+
 }
 ?>

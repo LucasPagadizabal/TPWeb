@@ -2,7 +2,7 @@
 
 class CabaniaModel{
 
-  private $db;
+  protected $db;
 
   function __construct(){
     $this->db = new PDO('mysql:host=localhost;dbname=complejo;charset=utf8', 'root', '');
@@ -33,9 +33,10 @@ class CabaniaModel{
     $sentencia->execute(array($id_cabania));
     $cabania = $sentencia->fetch(PDO::FETCH_ASSOC);
 
-    $cabania["categoria"] = $this->getTipoCat($cabania["id_categoria"]);
+    $cabania["estrella"] = $this->getTipoCat($cabania["id_categoria"]);
     $cabania["imagenes"] = $this->getImagenes($cabania["id_cabania"]);
     return $cabania;
+
   }
 
   function crearCabania($nombre,$descripcion,$categoria,$imagenes){
@@ -58,7 +59,9 @@ class CabaniaModel{
   function getTipoCat($id_categoria) {
     $sentencia = $this->db->prepare("select estrella from categoria where id_categoria = ?");
     $sentencia->execute(array($id_categoria));
-    return($sentencia->fetch(PDO::FETCH_ASSOC)["estrella"]);
+    //print_r($sentencia->fetch(PDO::FETCH_ASSOC)["estrella"]);
+    $estrella =$sentencia->fetch(PDO::FETCH_ASSOC)["estrella"];
+    return $estrella;
   }
 
   function borrarCabania($id_cabania){

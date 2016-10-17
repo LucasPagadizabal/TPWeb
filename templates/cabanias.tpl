@@ -14,12 +14,12 @@
     <div class="row">
       <div class="form-group col-xs-2">Categoria:
         <select class="form-control"  name="categoria">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select></div>
+          {foreach from=$categorias item=categoria}
+          <option value="{$categoria['estrella']}">{$categoria["estrella"]}</option>
+          {/foreach}
+      </select>
+      <button id="editarCategoria" class="btn btn-success" type="button">Editar Categorias</button>
+      </div>
     </div>
     <div class="form-group"><button class="btn btn-primary" type="submit" name="button">Enviar</button></div>
   </form>

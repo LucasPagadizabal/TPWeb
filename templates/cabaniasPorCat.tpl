@@ -1,17 +1,18 @@
-  <div class="panel">
+<div class="panel">
+  <div class="col-md-offset-4">
+    <label for="formBuscar">Buscar cabañia por categoria</label>
     <form id="formBuscar"  method="post">
-      <div class="form-group col-xs-2">
+      <div class="form-group col-xs-3">
         <select class="form-control" name="id_categoria">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+          {foreach from=$categorias item=categoria}
+          <option value="{$categoria['estrella']}">{$categoria["estrella"]}</option>
+          {/foreach}
         </select>
       </div>
       <button class="btn btn-primary" type="submit" name="">Buscar</button>
     </form>
   </div>
+</div>
 {if isset($lista) && $lista }
   <div class="panel">
     {foreach from=$cabanias item=cabania}
