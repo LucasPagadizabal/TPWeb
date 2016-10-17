@@ -72,18 +72,29 @@ class CabaniaModel{
     $sentencia->execute(array(!$cabania["ocupada"],$id_cabania));
   }
   function editCabania($id_cabania, $nuevaCategoria, $nuevoNombre, $nuevaDescripcion){
-    if ($nuevaCategoria!="") {
+    if (isset($nuevaCategoria)) {
       $sentencia = $this->db->prepare("update cabania set id_categoria=? where id_cabania=?");
       $sentencia->execute(array($nuevaCategoria, $id_cabania));
     }
-    if ($nuevoNombre!="") {
+    if (isset($nuevoNombre)) {
       $sentencia = $this->db->prepare("update cabania set nombre=? where id_cabania=?");
       $sentencia->execute(array($nuevoNombre, $id_cabania));
     }
-    if ($nuevaDescripcion!="") {
+    if (isset($nuevaDescripcion)) {
       $sentencia = $this->db->prepare("update cabania set comentarios=? where id_cabania=?");
       $sentencia->execute(array($nuevaDescripcion, $id_cabania));
     }
+  }
+
+  function buscarCabaniasCat($id_categoria){
+      $sentencia = $this->db->prepare("select * from cabania where id_categoria=?");
+      $sentencia->execute(array($id_categoria));
+      $cabaniasPorCategoria = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($cabaniasPorCategoria as $key => $cabania) {
+          $cabaniasPorCategoria[$key]['imagenes']=$this->getImagenes($cabania['id_cabania']);
+      }
+
+      return($cabaniasPorCategoria);
   }
 }
 ?>

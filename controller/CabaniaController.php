@@ -19,12 +19,12 @@ class CabaniaController{
 
   function showCabania($id_cabania){
     $cabania = $this->model->getCabania($id_cabania);
-    $this->view->mostrarCabania($cabania);
+    $this->view->mostrarCabania($cabania, true);
   }
 
   function mostrarListaCabanias(){
     $cabanias = $this->model->getCabanias();
-    $this->view->mostrarListaCabanias($cabanias);
+    $this->view->mostrarListaCabanias($cabanias, true);
   }
 
 }

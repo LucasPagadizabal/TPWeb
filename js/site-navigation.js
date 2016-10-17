@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+
   initDynamicEventHandlers();
 
   $(".nav-Element").click(function(event){
@@ -16,16 +18,25 @@ $(document).ready(function(){
   });
 
 
-
   //funcion que hace que se recarguen los listeners de toda la pagina
   //el nombre quedo asi porque lo saque d internet
 
   function initDynamicEventHandlers() {
 
+    $(".cabaniaPorCategoria").click (function(){
+      event.preventDefault();
+      $.get("index.php?action=categorias", function(data) {
+        $('#articulo').html(data);
+        initDynamicEventHandlers();
+      });
+    });
+
+
     $(".disponiblidadCabania").click(function (){
       event.preventDefault();
       $.get("index.php?action=editarDispCabania",{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
         $('#articulo').html(data);
+        console.log("data");
         initDynamicEventHandlers();
       });
     });
@@ -68,6 +79,24 @@ $(document).ready(function(){
         }
       });
     });
+//
+$("#formBuscar").submit(function(){
+  event.preventDefault();
+  formData = new FormData(this);
+  $.ajax({
+    method: "POST",
+    url: "index.php?action=buscarCabaniasCat",
+    data: formData,
+    contentType: false,
+    cache: false,
+    processData: false,
+    success: function(data){
+      $("#articulo").html(data);
+      initDynamicEventHandlers();
+    }
+  });
+});
+
 
     $("#formCabaniaEdit").submit(function(){
       event.preventDefault();

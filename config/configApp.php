@@ -12,8 +12,11 @@ class ConfigApp{
   public static $ACTION_EDITAR_CABANIA ="editarCabania";
   public static $ACTION_EDITAR_DISP_CABANIA ="editarDispCabania";
 
+  //
+  public static $ACTION_CATEGORIAS = "categorias";
+  public static $ACTION_BUSCAR_CABANIAS = "buscarCabaniasCat";
+
+
 }
-
-
 
  ?>

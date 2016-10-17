@@ -3,9 +3,14 @@
 require_once("config/configApp.php");
 require_once("controller/CabaniaController.php");
 require_once("controller/AdminController.php");
+//
+require_once("controller/CategoriaController.php");
 
 $CabaniaController = new CabaniaController();
 $AdminController = new AdminController();
+
+//
+$CategoriaController = new CategoriaController();
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
   // Home del sitio
@@ -49,6 +54,17 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   case ConfigApp::$ACTION_ADMIN:
   $AdminController->showCabanias();
   break;
+
+//
+  case ConfigApp::$ACTION_CATEGORIAS:
+  //controller
+  $CategoriaController->iniciar();
+  break;
+
+  case ConfigApp::$ACTION_BUSCAR_CABANIAS:
+  $CategoriaController->buscarCabaniasCat();
+  break;
+
 }
 
 

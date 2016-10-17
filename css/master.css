@@ -76,17 +76,6 @@ h1, h2, h3, h4{
 .eliminarCabania{
   float: right;
 }
-.disponiblidadCabania{
-  display: inline-block;
-  /*float left; */
-}
-.imgSmall{
-  height: 75px;
-  width: 75px;
-  display: inline-block;
-  text-align: right;  
-
-}
 .alerta-success {
   color: #3c763d;
   background-color: #dff0d8;
