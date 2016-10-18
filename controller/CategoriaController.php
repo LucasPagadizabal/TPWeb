@@ -24,13 +24,14 @@ class CategoriaController extends CabaniaController{
   function buscarCabaniasCat(){
     $id_categoria = $_POST["id_categoria"];
     //llega
-    $cabanias = $this->model->buscarCabaniasCat($id_categoria);
-
+    $cabanias = $this->modelCategoria->buscarCabaniasCat($id_categoria);
+    $categorias = $this->getCategorias();
     if (count($cabanias)>0) {
       $mensaje = "Su busqueda fue exitosa!";
     }else {
       $mensaje = "No hay cabanias con esa categoria";
     }
+
     $this->view->mostrarCabaniasCat($cabanias,$mensaje,$categorias);
   }
 

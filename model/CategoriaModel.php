@@ -8,6 +8,12 @@ class CategoriaModel extends CabaniaModel{
     parent::__construct();
   }
 
+  function buscarCabaniasCat($id_categoria){
+    $sentencia = $this->db->prepare("select * from cabania where id_categoria=?");
+    $sentencia->execute(array($id_categoria));
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   function getCategorias(){
     $sentencia = $this->db->prepare("select * from categoria");
     $sentencia->execute();

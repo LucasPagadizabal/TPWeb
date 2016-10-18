@@ -14,9 +14,10 @@ class CategoriaView extends CabaniaView{
     $this->smarty->display("cabaniasPorCat.tpl");
   }
 
-  function mostrarCabaniasCat($cabanias,$mensaje){
+  function mostrarCabaniasCat($cabanias,$mensaje,$categorias){
     $this->smarty->assign("lista", true);
     $this->smarty->assign("mensaje", $mensaje);
+    $this->smarty->assign("categorias", $categorias);
     $this->smarty->assign("cabanias", $cabanias);
     $this->smarty->display("cabaniasPorCat.tpl");
   }
