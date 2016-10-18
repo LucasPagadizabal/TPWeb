@@ -72,7 +72,7 @@ h1, h2, h3, h4{
   opacity: 1;
   width: 30%;
 }
-.eliminarCabania{
+.btnEliminarCab{
   float: right;
 }
 .alerta-success {

@@ -15,7 +15,7 @@
 
 <div class="panel">
 
-  <form id="formCabaniaEdit" method="post">
+  <form class="ajaxForm" href="index.php?action=editarCabania" method="post">
     <div class="row">
     <div class="form-group col-xs-4">
       <input class="form-control" type="text" name="nombreEdit" value="{$cabania["nombre"]}">

@@ -1,7 +1,7 @@
 {if isset($admin) && $admin }
 <div class="coteiner panel">
   <h1>Crear nueva cabaña</h1>
-  <form class="conteiner panel" id="formCabania" method="post" enctype="multipart/form-data">
+  <form class="conteiner panel ajaxForm" href="index.php?action=crearCabania" method="post" enctype="multipart/form-data">
     <div class="row">
       <div class="form-group col-xs-6"><input class="form-control" type="text" name="nombre" value="" placeholder="Nombre de la cabaña"></div>
     </div>
@@ -18,7 +18,7 @@
           <option value="{$categoria['estrella']}">{$categoria["estrella"]}</option>
           {/foreach}
       </select>
-      <button id="editarCategoria" class="btn btn-success" type="button">Editar Categorias</button>
+      <button class="btn btn-success nav-link" href="editorCategorias" type="button">Editar Categorias</button>
       </div>
     </div>
     <div class="form-group"><button class="btn btn-primary" type="submit" name="button">Enviar</button></div>
@@ -32,7 +32,7 @@
 {foreach from=$cabanias item=cabania}
 <div class="panel">
   <p>
-    <a class="tituloCabania" data-idcabania="{$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
+    <a class="nav-link-cabania" href="cabania" data-idcabania="{$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
     <div class="panel">
       <p>
         Pertenece a la categoria {$cabania["id_categoria"]} estrella/as.
@@ -43,13 +43,10 @@
     </p>
   </div>
   {if isset($admin) && $admin }
-  <div class="conteiner panel">
-      Disponibilidad de la cabaña:
-      <button class="disponiblidadCabania btn btn-primary"  data-idcabania="{$cabania['id_cabania']}" type="button">Cambiar</button>
-    </div>
     <div class="panel">
-      <button class="editarCabania btn btn-success"  data-idcabania="{$cabania['id_cabania']}" type="button">Editar Cabaña</button>
-      <button class="eliminarCabania btn btn-danger"  data-idcabania="{$cabania['id_cabania']}">ELIMINAR CABAÑA</button>
+      <button class="btn btn-primary nav-link-cabania" href="editarDispCabania" data-idcabania="{$cabania['id_cabania']}" type="button">Cambiar Disponibilidad</button>
+      <button class="btn btn-success nav-link-cabania" href="editorDeCabania" data-idcabania="{$cabania['id_cabania']}" type="button">Editar Cabaña</button>
+      <button class="btn btn-danger nav-link-cabania btnEliminarCab" href="borrarCabania" data-idcabania="{$cabania['id_cabania']}">ELIMINAR CABAÑA</button>
     </div>
   {/if}
 

@@ -1,6 +1,4 @@
 $(document).ready(function(){
-
-
   initDynamicEventHandlers();
 
   $(".nav-Element").click(function(event){
@@ -17,18 +15,24 @@ $(document).ready(function(){
     });
   });
 
-
-  //funcion que hace que se recarguen los listeners de toda la pagina
-  //el nombre quedo asi porque lo saque d internet
-
   function initDynamicEventHandlers() {
 
-    $(".editarCategoria").submit(function(){
+    $(".nav-link").click (function(){
+      event.preventDefault();
+      var dir = $(this).attr("href");
+      $.get("index.php?action="+dir, function(data) {
+        $('#articulo').html(data);
+        initDynamicEventHandlers();
+      });
+    });
+
+    $(".ajaxForm").submit(function(){
       event.preventDefault();
       formData = new FormData(this);
+      var dir = $(this).attr("href");
       $.ajax({
         method: "POST",
-        url: "index.php?action=editarCategoria",
+        url: dir,
         data: formData,
         contentType: false,
         cache: false,
@@ -40,132 +44,21 @@ $(document).ready(function(){
       });
     });
 
-
-    $("#editarCategoria").click (function(){
+    $(".nav-link-categoria").click (function(){
       event.preventDefault();
-      //var id_categoria = $(this).closest("input").attr(data-id-categoria);
-      //var valorInput = $(this).closest("input").val();
-      $.post("index.php?action=editorCategorias",function(data) {
+      var dir = $(this).attr("href");
+      $.get("index.php?action="+dir,{id_categoria : $(this).attr("data-id-categoria")}, function(data) {
         $('#articulo').html(data);
         initDynamicEventHandlers();
       });
     });
 
-    $(".eliminarCategoria").click (function(){
+    $(".nav-link-cabania").click(function (){
       event.preventDefault();
-      $.get("index.php?action=eliminarCategoria",{id_categoria : $(this).attr("data-id-categoria")}, function(data) {
+      var dir = $(this).attr("href");
+      $.get("index.php?action="+dir,{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
         $('#articulo').html(data);
         initDynamicEventHandlers();
-      });
-    });
-
-
-    $(".cabaniaPorCategoria").click (function(){
-      event.preventDefault();
-      $.get("index.php?action=categorias", function(data) {
-        $('#articulo').html(data);
-        initDynamicEventHandlers();
-      });
-    });
-
-    $("#formCrearCat").submit(function(){
-      event.preventDefault();
-      formData = new FormData(this);
-      $.ajax({
-        method: "POST",
-        url: "index.php?action=crearCategoria",
-        data: formData,
-        contentType: false,
-        cache: false,
-        processData: false,
-        success: function(data){
-          $("#articulo").html(data);
-          initDynamicEventHandlers();
-        }
-      });
-    });
-
-
-    $(".disponiblidadCabania").click(function (){
-      event.preventDefault();
-      $.get("index.php?action=editarDispCabania",{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
-        $('#articulo').html(data);
-        console.log("data");
-        initDynamicEventHandlers();
-      });
-    });
-    $(".editarCabania").click(function (){
-      event.preventDefault();
-      $.get("index.php?action=editorDeCabania&id="+$(this).attr("data-idcabania"), function(data) {
-        $('#articulo').html(data);
-        initDynamicEventHandlers();
-      });
-    });
-    $(".tituloCabania").click(function (){
-      event.preventDefault();
-      $.get("index.php?action=cabania&id="+$(this).attr("data-idcabania"), function(data) {
-        $('#articulo').html(data);
-        initDynamicEventHandlers();
-      });
-    });
-
-    $(".eliminarCabania").click(function(){
-      event.preventDefault();
-      $.get("index.php?action=borrarCabania",{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
-        $('#articulo').html(data);
-        initDynamicEventHandlers();
-      });
-    });
-
-    $("#formCabania").submit(function(){
-      event.preventDefault();
-      formData = new FormData(this);
-      $.ajax({
-        method: "POST",
-        url: "index.php?action=crearCabania",
-        data: formData,
-        contentType: false,
-        cache: false,
-        processData: false,
-        success: function(data){
-          $("#articulo").html(data);
-          initDynamicEventHandlers();
-        }
-      });
-    });
-//
-$("#formBuscar").submit(function(){
-  event.preventDefault();
-  formData = new FormData(this);
-  $.ajax({
-    method: "POST",
-    url: "index.php?action=buscarCabaniasCat",
-    data: formData,
-    contentType: false,
-    cache: false,
-    processData: false,
-    success: function(data){
-      $("#articulo").html(data);
-      initDynamicEventHandlers();
-    }
-  });
-});
-
-
-    $("#formCabaniaEdit").submit(function(){
-      event.preventDefault();
-      formData = new FormData(this);
-      $.ajax({
-        method: "POST",
-        url: "index.php?action=editarCabania",
-        data: formData,
-        contentType: false,
-        cache: false,
-        processData: false,
-        success: function(data){
-          $("#articulo").html(data);
-          initDynamicEventHandlers();
-        }
       });
     });
   }

@@ -37,7 +37,8 @@ class AdminController extends CabaniaController{
     $this->model->editarDisponibilidadCabania($id_cabania);
     $this->mostrarListaCabanias();
   }
-  function mostrarEditor($id_cabania){
+  function mostrarEditor(){
+    $id_cabania = $_GET["id_cabania"];
     $cabania = $this->model->getCabania($id_cabania);
     $this->view->mostrarEditor($cabania);
   }
@@ -55,12 +56,12 @@ class AdminController extends CabaniaController{
   function mostrarListaCabanias(){
     $cabanias = $this->model->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
-    $this->view->mostrarListaCabanias($cabanias, true,$categorias);
+    $this->view->mostrarListaCabanias($cabanias, true, $categorias);
   }
   function showCabanias(){
     $cabanias = $this->model->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
-    $this->view->iniciarView($cabanias, true,$categorias);
+    $this->view->iniciarView($cabanias, true, $categorias);
   }
 }
 

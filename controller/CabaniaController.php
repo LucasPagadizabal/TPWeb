@@ -17,7 +17,8 @@ class CabaniaController{
     $this->view->iniciarView($cabanias);
   }
 
-  function showCabania($id_cabania){
+  function showCabania(){
+    $id_cabania = $_GET["id_cabania"];
     $cabania = $this->model->getCabania($id_cabania);
     $this->view->mostrarCabania($cabania, true);
   }

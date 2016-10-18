@@ -1,7 +1,7 @@
 <div class="panel">
-  <div class="col-md-offset-4">
-    <label for="formBuscar">Buscar cabañia por categoria</label>
-    <form id="formBuscar"  method="post">
+  <div class="col-md-offset-5">
+    <label for="ajaxForm">Buscar cabaña por categoria</label>
+    <form class="ajaxForm" href="index.php?action=buscarCabaniasCat"  method="post">
       <div class="form-group col-xs-3">
         <select class="form-control" name="id_categoria">
           {foreach from=$categorias item=categoria}

@@ -19,15 +19,21 @@ if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
 }
 switch($_REQUEST[ConfigApp::$ACTION]){
 
+
+  // ACTIONS DE CABANIA
+
+
   case ConfigApp::$ACTION_SHOW_CABANIA:
-  if(!empty($_GET["id"])){
-    $CabaniaController->showCabania(($_GET["id"]));
-  }
+  $CabaniaController->showCabania();
   break;
 
   case ConfigApp::$ACTION_HOME:
   $CabaniaController->iniciar();
   break;
+
+
+  // ACTIONS DE ADMIN
+
 
   case ConfigApp::$ACTION_CREATE_CABANIA:
   $AdminController->crearCabania();
@@ -42,9 +48,7 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   break;
 
   case ConfigApp::$ACTION_EDITOR_DE_CABANIA:
-  if(!empty($_GET["id"])){
-    $AdminController->mostrarEditor($_GET["id"]);
-  }
+  $AdminController->mostrarEditor();
   break;
 
   case ConfigApp::$ACTION_EDITAR_CABANIA:
@@ -55,9 +59,11 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   $AdminController->showCabanias();
   break;
 
-//
+
+  // ACTIONS DE CATEGORIA
+
+
   case ConfigApp::$ACTION_CATEGORIAS:
-  //controller
   $CategoriaController->iniciar();
   break;
 
@@ -81,6 +87,5 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   $CategoriaController->crearCategoria();
   break;
 }
-
 
 ?>

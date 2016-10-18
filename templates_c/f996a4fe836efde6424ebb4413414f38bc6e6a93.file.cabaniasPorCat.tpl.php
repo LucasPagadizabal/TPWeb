@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-17 22:50:26
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-18 06:46:46
          compiled from ".\templates\cabaniasPorCat.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:54135804e55da0b588-83182157%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:188495805a936ec3cc2-06761877%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f996a4fe836efde6424ebb4413414f38bc6e6a93' => 
     array (
       0 => '.\\templates\\cabaniasPorCat.tpl',
-      1 => 1476737421,
+      1 => 1476761193,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '54135804e55da0b588-83182157',
+  'nocache_hash' => '188495805a936ec3cc2-06761877',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5804e55db79e98_76829347',
   'variables' => 
   array (
     'categorias' => 0,
@@ -27,12 +25,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'mensaje' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5805a936f34216_47354218',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5804e55db79e98_76829347')) {function content_5804e55db79e98_76829347($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5805a936f34216_47354218')) {function content_5805a936f34216_47354218($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\projects\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><div class="panel">
-  <div class="col-md-offset-4">
-    <label for="formBuscar">Buscar cabañia por categoria</label>
-    <form id="formBuscar"  method="post">
+  <div class="col-md-offset-5">
+    <label for="ajaxForm">Buscar cabaña por categoria</label>
+    <form class="ajaxForm" href="index.php?action=buscarCabaniasCat"  method="post">
       <div class="form-group col-xs-3">
         <select class="form-control" name="id_categoria">
           <?php  $_smarty_tpl->tpl_vars['categoria'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['categoria']->_loop = false;
