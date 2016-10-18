@@ -8,8 +8,9 @@ class AdminView extends CabaniaView{
     parent::__construct();
   }
 
-  function mostrarEditor($cabania){
+  function mostrarEditor($cabania,$categorias){
     $this->smarty->assign("cabania", $cabania);
+    $this->smarty->assign("categorias", $categorias);
     $this->smarty->display("cabaniaEdicion.tpl");
   }
 

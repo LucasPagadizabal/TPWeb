@@ -40,7 +40,8 @@ class AdminController extends CabaniaController{
   function mostrarEditor(){
     $id_cabania = $_GET["id_cabania"];
     $cabania = $this->model->getCabania($id_cabania);
-    $this->view->mostrarEditor($cabania);
+    $categorias = $this->modelCategoria->getCategorias();
+    $this->view->mostrarEditor($cabania,$categorias);
   }
   function editarCabania(){
     $categoria = $_POST['categoriaEdit'];

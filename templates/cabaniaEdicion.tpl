@@ -30,12 +30,9 @@
     <div class="form-group col-xs-2">
       <label>Nueva categoria</label>
       <select class="form-control" name="categoriaEdit">
-        <option disabled value="-1">Elegir</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+        {foreach from=$categorias item=categoria}
+        <option value="{$categoria['estrella']}">{$categoria["estrella"]}</option>
+        {/foreach}
       </select>
     </div>
   </div>

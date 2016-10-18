@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-18 06:56:57
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-18 18:20:18
          compiled from ".\templates\cabanias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:142515805a8c22536b0-54076063%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a6b742f9443fd2eb7cfb3cd64aa8c2d5e46bcf75' => 
     array (
       0 => '.\\templates\\cabanias.tpl',
-      1 => 1476766588,
+      1 => 1476807420,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5805a8c22a1185_13854123')) {function content_5805a8c22a1185_13854123($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\projects\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5805a8c22a1185_13854123')) {function content_5805a8c22a1185_13854123($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><?php if (isset($_smarty_tpl->tpl_vars['admin']->value)&&$_smarty_tpl->tpl_vars['admin']->value){?>
 <div class="coteiner panel">
   <h1>Crear nueva cabaña</h1>
