@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-18 18:20:34
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-18 22:48:39
          compiled from ".\templates\cabaniaEdicion.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1623258064bd213e153-46979701%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b2826ab2f7cdbbcdfa48d755938a837fdddd2c4a' => 
     array (
       0 => '.\\templates\\cabaniaEdicion.tpl',
-      1 => 1476807484,
+      1 => 1476823709,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_58064bd2270f42_37292331',
   'variables' => 
   array (
     'cabania' => 0,
@@ -22,14 +24,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'categoria' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_58064bd2270f42_37292331',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58064bd2270f42_37292331')) {function content_58064bd2270f42_37292331($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><?php if (isset($_smarty_tpl->tpl_vars['cabania']->value)){?>
 <div class="panel">
   <p>
-    <a href="index.php?action=cabania&id=<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
+    <a class="nav-link-cabania" href="cabania" data-idcabania="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
 "><h3>Cabaña <?php echo $_smarty_tpl->tpl_vars['cabania']->value["nombre"];?>
 </h3></a>
     <div class="panel">

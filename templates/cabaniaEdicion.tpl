@@ -1,7 +1,7 @@
 {if isset($cabania)}
 <div class="panel">
   <p>
-    <a href="index.php?action=cabania&id={$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
+    <a class="nav-link-cabania" href="cabania" data-idcabania="{$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
     <div class="panel">
       <p>
         Pertenece a la categoria {$cabania["id_categoria"]} estrella/as.
