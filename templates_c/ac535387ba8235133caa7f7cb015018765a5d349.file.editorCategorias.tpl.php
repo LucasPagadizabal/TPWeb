@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-20 15:48:26
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-21 01:14:48
          compiled from ".\templates\editorCategorias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:309805808cb2b00ba22-04902187%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ac535387ba8235133caa7f7cb015018765a5d349' => 
     array (
       0 => '.\\templates\\editorCategorias.tpl',
-      1 => 1476822314,
+      1 => 1477005221,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5808cb2b124747_18307516',
   'variables' => 
   array (
     'categorias' => 0,
     'categoria' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5808cb2b124747_18307516',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5808cb2b124747_18307516')) {function content_5808cb2b124747_18307516($_smarty_tpl) {?><div class="panel">
   <div class="col-md-offset-4">
@@ -37,7 +37,8 @@ $_smarty_tpl->tpl_vars['categoria']->_loop = true;
       <input type="hidden" name="data-idcategoria" value=<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
 >
       <button class="btn btn-success" type="submit" name="button">Editar</button>
-      <button class="btn btn-danger nav-link-categoria" href="eliminarCategoria" data-id-categoria="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
+      <button class="btn btn-danger nav-link-categoria" href="eliminarCategoria" data="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['estrella'];?>
+" data-id-categoria="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
 " type="button" name="button">Eliminar</button>
     </form>
     <?php } ?>

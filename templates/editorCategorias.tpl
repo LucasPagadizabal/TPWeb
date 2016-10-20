@@ -5,7 +5,7 @@
       <input type="number" name="valorInput" value="{$categoria['estrella']}">
       <input type="hidden" name="data-idcategoria" value={$categoria['id_categoria']}>
       <button class="btn btn-success" type="submit" name="button">Editar</button>
-      <button class="btn btn-danger nav-link-categoria" href="eliminarCategoria" data-id-categoria="{$categoria['id_categoria']}" type="button" name="button">Eliminar</button>
+      <button class="btn btn-danger nav-link-categoria" href="eliminarCategoria" data="{$categoria['estrella']}" data-id-categoria="{$categoria['id_categoria']}" type="button" name="button">Eliminar</button>
     </form>
     {/foreach}
     <form class="ajaxForm" href="index.php?action=crearCategoria" method="post">
