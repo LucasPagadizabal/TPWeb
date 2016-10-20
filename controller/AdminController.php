@@ -23,7 +23,7 @@ class AdminController{
     $imagenes = $_FILES["imagenes"];
 
     if (isset($imagenes,$categoria)&&($descripcion!="")&&($nombre!="")) {
-      $this->model->crearCabania($nombre,$descripcion,$categoria,$imagenes);
+      $this->modelCabania->crearCabania($nombre,$descripcion,$categoria,$imagenes);
     }
     $this->mostrarListaCabanias();
 
