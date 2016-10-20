@@ -2,10 +2,10 @@
 
 require_once ('model/CabaniaModel.php');
 
-class CategoriaModel extends CabaniaModel{
+class CategoriaModel{
 
   function __construct(){
-    parent::__construct();
+    $this->db = new PDO('mysql:host=localhost;dbname=complejo;charset=utf8', 'root', '');
   }
 
   function buscarCabaniasCat($id_categoria){

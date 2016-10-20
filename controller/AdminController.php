@@ -4,12 +4,13 @@ require_once ('controller/CabaniaController.php');
 require_once ('view/AdminView.php');
 require_once ('model/CategoriaModel.php');
 
-class AdminController extends CabaniaController{
+class AdminController{
 
   protected $modelCategoria;
+  protected $modelCabania;
 
   function __construct(){
-    parent::__construct();
+    $this->modelCabania = new CabaniaModel();
     $this->view = new AdminView();
     $this->modelCategoria = new CategoriaModel();
   }
@@ -29,17 +30,17 @@ class AdminController extends CabaniaController{
   }
   function borrarCabania(){
     $id_cabania = $_GET["id_cabania"];
-    $this->model->borrarCabania($id_cabania);
+    $this->modelCabania->borrarCabania($id_cabania);
     $this->mostrarListaCabanias();
   }
   function editarDisponibilidadCabania(){
     $id_cabania = $_GET["id_cabania"];
-    $this->model->editarDisponibilidadCabania($id_cabania);
+    $this->modelCabania->editarDisponibilidadCabania($id_cabania);
     $this->mostrarListaCabanias();
   }
   function mostrarEditor(){
     $id_cabania = $_GET["id_cabania"];
-    $cabania = $this->model->getCabania($id_cabania);
+    $cabania = $this->modelCabania->getCabania($id_cabania);
     $categorias = $this->modelCategoria->getCategorias();
     $this->view->mostrarEditor($cabania,$categorias);
   }
@@ -50,17 +51,17 @@ class AdminController extends CabaniaController{
     $id_cabania = $_POST['data-idcabania'];
 
     if ($categoria!="-1"&&($descripcion!="")&&($nombre!="")) {
-      $this->model->editCabania($id_cabania, $categoria, $nombre, $descripcion);
+      $this->modelCabania->editCabania($id_cabania, $categoria, $nombre, $descripcion);
     }
     $this->mostrarListaCabanias();
   }
   function mostrarListaCabanias(){
-    $cabanias = $this->model->getCabanias();
+    $cabanias = $this->modelCabania->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
     $this->view->mostrarListaCabanias($cabanias, true, $categorias);
   }
   function showCabanias(){
-    $cabanias = $this->model->getCabanias();
+    $cabanias = $this->modelCabania->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
     $this->view->iniciarView($cabanias, true, $categorias);
   }
