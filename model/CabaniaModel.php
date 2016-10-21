@@ -99,5 +99,16 @@ class CabaniaModel{
 
       return($cabaniasPorCategoria);
   }
+
+  function borrarBBDD(){
+    $borradoCategorias = $this->db->prepare("TRUNCATE TABLE categoria");
+    $borradoCategorias->execute();
+    $borradoCabania = $this->db->prepare("TRUNCATE TABLE cabania");
+    $borradoCabania->execute();
+  }
+
+  function cargarBBDD(){
+    
+  }
 }
 ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-20 15:48:19
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-21 16:31:41
          compiled from ".\templates\cabaniaComentario.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:61965808cb234d61b8-58115794%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e40d432c7bc741f1ac5be812e562a7805a8efa36' => 
     array (
       0 => '.\\templates\\cabaniaComentario.tpl',
-      1 => 1476746256,
+      1 => 1477060290,
       2 => 'file',
     ),
   ),
@@ -15,18 +15,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5808cb2360a9a6_65429396',
   'variables' => 
   array (
     'cabania' => 0,
     'imagen' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5808cb2360a9a6_65429396',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5808cb2360a9a6_65429396')) {function content_5808cb2360a9a6_65429396($_smarty_tpl) {?><div class="panel">
   <h1>Cabaña <?php echo $_smarty_tpl->tpl_vars['cabania']->value["nombre"];?>
- <span id="cantidadEstrellas"><?php echo $_smarty_tpl->tpl_vars['cabania']->value["id_categoria"];?>
+ <span id="cantidadEstrellas"><?php echo $_smarty_tpl->tpl_vars['cabania']->value["estrella"];?>
 </span> </h1>
   <p class="conteiner panel texto">
     <?php echo $_smarty_tpl->tpl_vars['cabania']->value["comentarios"];?>

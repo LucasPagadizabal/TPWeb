@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-21 16:18:40
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-21 16:37:18
          compiled from ".\templates\cabanias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:308645808caa13b0ec4-89217115%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a6b742f9443fd2eb7cfb3cd64aa8c2d5e46bcf75' => 
     array (
       0 => '.\\templates\\cabanias.tpl',
-      1 => 1477059519,
+      1 => 1477060637,
       2 => 'file',
     ),
   ),
@@ -56,6 +56,9 @@ $_smarty_tpl->tpl_vars['categoria']->_loop = true;
       </select>
       <button class="btn btn-success nav-link" href="editorCategorias" type="button">Editar Categorias</button>
       </div>
+    </div>
+    <div class="row">
+      <button class="btn btn-success nav-link" type="button" href="editorBBDD">ABM de Base de Datos</button>
     </div>
     <div class="form-group"><button class="btn btn-primary" type="submit" name="button">Enviar</button></div>
   </form>
