@@ -15,7 +15,7 @@
       <div class="form-group col-xs-2">Categoria:
         <select class="form-control"  name="categoria">
           {foreach from=$categorias item=categoria}
-          <option value="{$categoria['estrella']}">{$categoria["estrella"]}</option>
+          <option value="{$categoria['id_categoria']}">{$categoria["estrella"]}</option>
           {/foreach}
       </select>
       <button class="btn btn-success nav-link" href="editorCategorias" type="button">Editar Categorias</button>
@@ -35,7 +35,7 @@
     <a class="nav-link-cabania" href="cabania" data-idcabania="{$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
     <div class="panel">
       <p>
-        Pertenece a la categoria {$cabania["id_categoria"]} estrella/as.
+        Pertenece a la categoria {$cabania["categoria"]} estrella/as.
       </p>
     </p>
     <p>
