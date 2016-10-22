@@ -75,20 +75,13 @@ class CabaniaModel{
     $sentencia->execute(array(!$cabania["ocupada"],$id_cabania));
   }
   function editCabania($id_cabania, $estrellas, $nuevoNombre, $nuevaDescripcion){
-    if (isset($estrellas)) {
+    if ( (isset($estrellas)) && (isset($estrellas)) && (isset($estrellas)) ) {
       $buscarIdCategoria = $this->db->prepare("select id_categoria from categoria where estrella=?");
       $buscarIdCategoria->execute(array($estrellas));
       $idEncontrado = $buscarIdCategoria->fetch(PDO::FETCH_ASSOC)["id_categoria"];
-      $sentencia = $this->db->prepare("update cabania set id_categoria=? where id_cabania=?");
-      $sentencia->execute(array($idEncontrado, $id_cabania));
-    }
-    if (isset($nuevoNombre)) {
-      $sentencia = $this->db->prepare("update cabania set nombre=? where id_cabania=?");
-      $sentencia->execute(array($nuevoNombre, $id_cabania));
-    }
-    if (isset($nuevaDescripcion)) {
-      $sentencia = $this->db->prepare("update cabania set comentarios=? where id_cabania=?");
-      $sentencia->execute(array($nuevaDescripcion, $id_cabania));
+
+      $sentencia = $this->db->prepare("update cabania set id_categoria=?,nombre=?,comentarios=? where id_cabania=?");
+      $sentencia->execute(array($idEncontrado,$nuevoNombre,$nuevaDescripcion, $id_cabania));
     }
   }
 
