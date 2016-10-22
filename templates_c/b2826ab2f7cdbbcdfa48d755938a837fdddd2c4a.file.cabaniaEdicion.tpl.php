@@ -1,20 +1,22 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-20 15:49:01
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-22 20:13:24
          compiled from ".\templates\cabaniaEdicion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:283975808cb4d277513-78035761%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:19837580ba83093a118-70017032%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b2826ab2f7cdbbcdfa48d755938a837fdddd2c4a' => 
     array (
       0 => '.\\templates\\cabaniaEdicion.tpl',
-      1 => 1476823709,
+      1 => 1477159984,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '283975808cb4d277513-78035761',
+  'nocache_hash' => '19837580ba83093a118-70017032',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_580ba830a524f8_73666539',
   'variables' => 
   array (
     'cabania' => 0,
@@ -22,10 +24,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'categoria' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5808cb4d3b6b76_09006875',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5808cb4d3b6b76_09006875')) {function content_5808cb4d3b6b76_09006875($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_580ba830a524f8_73666539')) {function content_580ba830a524f8_73666539($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><?php if (isset($_smarty_tpl->tpl_vars['cabania']->value)){?>
 <div class="panel">
   <p>
@@ -34,7 +34,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </h3></a>
     <div class="panel">
       <p>
-        Pertenece a la categoria <?php echo $_smarty_tpl->tpl_vars['cabania']->value["id_categoria"];?>
+        Pertenece a la categoria <?php echo $_smarty_tpl->tpl_vars['cabania']->value["estrella"];?>
  estrella/as.
       </p>
     </p>

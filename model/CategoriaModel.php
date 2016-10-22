@@ -11,7 +11,21 @@ class CategoriaModel{
   function buscarCabaniasCat($id_categoria){
     $sentencia = $this->db->prepare("select * from cabania where id_categoria=?");
     $sentencia->execute(array($id_categoria));
-    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    while ($cabania = $sentencia->fetch(PDO::FETCH_ASSOC)) {
+      $cabania["estrellas"] = $this->getCantEstrellas($cabania["id_categoria"]);
+      $cabanias[] = $cabania;
+    }
+    if (isset($cabanias)) {
+      return $cabanias;
+    }
+  }
+
+  function getCantEstrellas($id_categoria) {
+    $sentencia = $this->db->prepare("select estrella from categoria where id_categoria = ?");
+    $sentencia->execute(array($id_categoria));
+    //print_r($sentencia->fetch(PDO::FETCH_ASSOC)["estrella"]);
+    $estrella =$sentencia->fetch(PDO::FETCH_ASSOC)["estrella"];
+    return $estrella;
   }
 
   function getCategorias(){

@@ -45,25 +45,25 @@ class AdminController{
     $this->view->mostrarEditor($cabania,$categorias);
   }
   function editarCabania(){
-    $categoria = $_POST['categoriaEdit'];
+    $estellas = $_POST['categoriaEdit'];
     $nombre = $_POST['nombreEdit'];
     $descripcion = $_POST['descripcionEdit'];
     $id_cabania = $_POST['data-idcabania'];
 
-    if ($categoria!="-1"&&($descripcion!="")&&($nombre!="")) {
-      $this->modelCabania->editCabania($id_cabania, $categoria, $nombre, $descripcion);
+    if ($estellas!="-1"&&($descripcion!="")&&($nombre!="")) {
+      $this->modelCabania->editCabania($id_cabania, $estellas, $nombre, $descripcion);
     }
     $this->mostrarListaCabanias();
   }
   function mostrarListaCabanias(){
     $cabanias = $this->modelCabania->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
-    $this->view->mostrarListaCabanias($cabanias, true, $categorias);
+    $this->view->mostrarListaCabanias($cabanias, $categorias);
   }
   function showCabanias(){
     $cabanias = $this->modelCabania->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
-    $this->view->iniciarView($cabanias, true, $categorias);
+    $this->view->iniciarView($cabanias, $categorias);
   }
 }
 

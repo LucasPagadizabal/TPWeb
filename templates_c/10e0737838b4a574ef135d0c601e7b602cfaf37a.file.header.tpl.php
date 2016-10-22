@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-20 15:46:09
+<?php /* Smarty version Smarty-3.1.14, created on 2016-10-22 19:55:21
          compiled from ".\templates\header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:264515808caa137cdc5-19009579%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:31747580ba07108b768-84506059%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '10e0737838b4a574ef135d0c601e7b602cfaf37a' => 
     array (
       0 => '.\\templates\\header.tpl',
-      1 => 1476807420,
+      1 => 1477158893,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '264515808caa137cdc5-19009579',
+  'nocache_hash' => '31747580ba07108b768-84506059',
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5808caa13a2a37_96703718',
+  'unifunc' => 'content_580ba0710ba598_09842025',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5808caa13a2a37_96703718')) {function content_5808caa13a2a37_96703718($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_580ba0710ba598_09842025')) {function content_580ba0710ba598_09842025($_smarty_tpl) {?><!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -39,7 +39,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <li><a class="nav-Element" href="comoLlegar.html" >Como Llegar</a></li>
         <li><a class="nav-Element" href="tarifas.html">Tarifas</a></li>
         <li><a class="nav-Element" href="quienessomos.html">Nosotros</a></li>
-        <li><a class="nav-Element-Action" href="admin"><strong>Admin</strong></a></li>
+        <li><a class="nav-link" href="admin"><strong>Admin</strong></a></li>
       </ul>
     </nav>
   </header>

@@ -74,10 +74,13 @@ class CabaniaModel{
     $sentencia = $this->db->prepare("update cabania set ocupada=? where id_cabania=?");
     $sentencia->execute(array(!$cabania["ocupada"],$id_cabania));
   }
-  function editCabania($id_cabania, $nuevaCategoria, $nuevoNombre, $nuevaDescripcion){
-    if (isset($nuevaCategoria)) {
+  function editCabania($id_cabania, $estrellas, $nuevoNombre, $nuevaDescripcion){
+    if (isset($estrellas)) {
+      $buscarIdCategoria = $this->db->prepare("select id_categoria from categoria where estrella=?");
+      $buscarIdCategoria->execute(array($estrellas));
+      $idEncontrado = $buscarIdCategoria->fetch(PDO::FETCH_ASSOC)["id_categoria"];
       $sentencia = $this->db->prepare("update cabania set id_categoria=? where id_cabania=?");
-      $sentencia->execute(array($nuevaCategoria, $id_cabania));
+      $sentencia->execute(array($idEncontrado, $id_cabania));
     }
     if (isset($nuevoNombre)) {
       $sentencia = $this->db->prepare("update cabania set nombre=? where id_cabania=?");
@@ -108,7 +111,7 @@ class CabaniaModel{
   }
 
   function cargarBBDD(){
-    
+
   }
 }
 ?>

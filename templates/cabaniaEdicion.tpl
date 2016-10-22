@@ -4,7 +4,7 @@
     <a class="nav-link-cabania" href="cabania" data-idcabania="{$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
     <div class="panel">
       <p>
-        Pertenece a la categoria {$cabania["id_categoria"]} estrella/as.
+        Pertenece a la categoria {$cabania["estrella"]} estrella/as.
       </p>
     </p>
     <p>
