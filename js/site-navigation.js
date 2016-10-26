@@ -26,6 +26,8 @@ $(document).ready(function(){
       });
     });
 
+    // probando el issue
+
     $(".ajaxForm").submit(function(){
       event.preventDefault();
       formData = new FormData(this);
