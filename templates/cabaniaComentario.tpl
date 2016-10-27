@@ -1,5 +1,5 @@
 <div class="panel">
-  <h1>Cabaña {$cabania["nombre"]} <span id="cantidadEstrellas">{$cabania["id_categoria"]}</span> </h1>
+  <h1>Cabaña {$cabania["nombre"]} <span id="cantidadEstrellas">{$cabania["estrella"]}</span> </h1>
   <p class="conteiner panel texto">
     {$cabania["comentarios"]}
   </p>

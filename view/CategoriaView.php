@@ -1,11 +1,11 @@
 <?php
 require_once("libs/Smarty.class.php");
-require_once("view/CabaniaView.php");
 
-class CategoriaView extends CabaniaView{
+
+class CategoriaView{
 
   function __construct(){
-    parent::__construct();
+    $this->smarty = new Smarty();
   }
 
   function iniciar($categorias){

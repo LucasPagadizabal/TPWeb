@@ -1,11 +1,11 @@
 <?php
 require_once("libs/Smarty.class.php");
-require_once("view/CabaniaView.php");
 
-class AdminView extends CabaniaView{
+
+class AdminView{
 
   function __construct(){
-    parent::__construct();
+    $this->smarty = new Smarty();
   }
 
   function mostrarEditor($cabania,$categorias){
@@ -14,22 +14,19 @@ class AdminView extends CabaniaView{
     $this->smarty->display("cabaniaEdicion.tpl");
   }
 
-  function showCabaniaCreada($mensaje, $tipo, $administrador){
+  function showCabaniaCreada($mensaje, $tipo){
     $this->smarty->assign("mensaje", $mensaje);
-    $this->smarty->assign("admin",$administrador);
     $this->smarty->assign("tipoMensaje", $tipo);
   }
-  function mostrarListaCabanias($cabanias, $administrador,$categoria){
+  function mostrarListaCabanias($cabanias,$categoria){
     $this->smarty->assign("cabanias",$cabanias);
-    $this->smarty->assign("admin",$administrador);
     $this->smarty->assign("categorias",$categoria);
-    $this->smarty->display("cabanias.tpl");
+    $this->smarty->display("cabaniasEdiciones.tpl");
   }
-  function iniciarView($cabanias, $administrador,$categorias){
+  function iniciarView($cabanias,$categorias){
     $this->smarty->assign("categorias",$categorias);
     $this->smarty->assign("cabanias",$cabanias);
-    $this->smarty->assign("admin",$administrador);
-    $this->smarty->display("body.tpl");
+    $this->smarty->display("cabaniasEdiciones.tpl");
   }
 }
 ?>

@@ -86,6 +86,18 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   case ConfigApp::$ACTION_CREATE_CATEGORIA:
   $CategoriaController->crearCategoria();
   break;
+
+  case ConfigApp::$ACTION_EDITOR_BBDD:
+  $CabaniaController->editorBBDD();
+  break;
+
+  case ConfigApp::$ACTION_DELETE_BBDD:
+  $CabaniaController->deleteBBDD();
+  break;
+
+  case ConfigApp::$ACTION_CARGAR_BBDD:
+  $CabaniaController->cargarBBDD();
+  break;
 }
 
 ?>

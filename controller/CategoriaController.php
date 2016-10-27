@@ -1,16 +1,16 @@
 <?php
-require_once ('model/CabaniaModel.php');
+//require_once ('model/CabaniaModel.php');
 require_once ('controller/CabaniaController.php');
 require_once ('view/CategoriaView.php');
 require_once ('model/CategoriaModel.php');
 require_once ('controller/AdminController.php');
 
-class CategoriaController extends CabaniaController{
+class CategoriaController{
 
-  private $modelCategoria;
-  private $controllerAdmin;
+    private $modelCategoria;
+    private $controllerAdmin;
+    private $view;
   function __construct(){
-    parent::__construct();
     $this->view = new CategoriaView();
     $this->modelCategoria = new CategoriaModel();
     $this->controllerAdmin = new AdminController();
@@ -53,7 +53,8 @@ class CategoriaController extends CabaniaController{
 
   function eliminarCategoria(){
     $id_categoria = $_GET["id_categoria"];
-    $this->modelCategoria->eliminarCategoria($id_categoria);
+    $estrellas = $_GET["estrella"];
+    $this->modelCategoria->eliminarCategoria($id_categoria,$estrellas);
     $this->controllerAdmin->mostrarListaCabanias();
   }
 

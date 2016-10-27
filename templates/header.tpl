@@ -18,7 +18,7 @@
         <li><a class="nav-Element" href="comoLlegar.html" >Como Llegar</a></li>
         <li><a class="nav-Element" href="tarifas.html">Tarifas</a></li>
         <li><a class="nav-Element" href="quienessomos.html">Nosotros</a></li>
-        <li><a class="nav-Element-Action" href="admin"><strong>Admin</strong></a></li>
+        <li><a class="nav-link" href="admin"><strong>Admin</strong></a></li>
       </ul>
     </nav>
   </header>

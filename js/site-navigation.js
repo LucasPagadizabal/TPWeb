@@ -49,7 +49,7 @@ $(document).ready(function(){
     $(".nav-link-categoria").click (function(){
       event.preventDefault();
       var dir = $(this).attr("href");
-      $.get("index.php?action="+dir,{id_categoria : $(this).attr("data-id-categoria")}, function(data) {
+      $.get("index.php?action="+dir,{id_categoria : $(this).attr("data-id-categoria"),estrella : $(this).attr("data")}, function(data) {
         $('#articulo').html(data);
         initDynamicEventHandlers();
       });
