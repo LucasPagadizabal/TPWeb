@@ -75,7 +75,7 @@ class CabaniaModel{
     $sentencia->execute(array(!$cabania["ocupada"],$id_cabania));
   }
   function editCabania($id_cabania, $estrellas, $nuevoNombre, $nuevaDescripcion){
-    if ( (isset($estrellas)) && (isset($estrellas)) && (isset($estrellas)) ) {
+    if ( (isset($id_cabania)) && (isset($estrellas)) && (isset($nuevoNombre)) && (isset($nuevaDescripcion)) ) {
       $buscarIdCategoria = $this->db->prepare("select id_categoria from categoria where estrella=?");
       $buscarIdCategoria->execute(array($estrellas));
       $idEncontrado = $buscarIdCategoria->fetch(PDO::FETCH_ASSOC)["id_categoria"];
