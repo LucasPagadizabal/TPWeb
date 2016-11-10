@@ -1,12 +1,15 @@
 
 {if isset($cabanias)}
 
+{if !$sesion}
 <div class="conteiner">
   <a class="nav-link" href="mostrarLogin">Log in</a>
 </div>
+{else}
 <div class="conteiner">
   <a class="nav-link" href="cerrarSesion">Cerrar Sesion</a>
 </div>
+{/if}
 
 {foreach from=$cabanias item=cabania}
 <div class="panel ">

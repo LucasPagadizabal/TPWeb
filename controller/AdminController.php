@@ -3,7 +3,7 @@ require_once ('model/CabaniaModel.php');
 require_once ('model/CategoriaModel.php');
 // require_once ('controller/CabaniaController.php');
 require_once ('view/AdminView.php');
-  SESSION_START();
+session_start();
 class AdminController{
 
   protected $modelCategoria;
@@ -57,9 +57,14 @@ class AdminController{
     $this->mostrarListaCabanias();
   }
   function mostrarListaCabanias(){
+    if(!isset($_SESSION["privilegio"])){
+      $priv=0;
+    }else{
+      $priv = $_SESSION["privilegio"];
+    }
     $cabanias = $this->modelCabania->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
-    $this->view->mostrarListaCabanias($cabanias, $categorias);
+    $this->view->mostrarListaCabanias($cabanias, $categorias,$priv);
   }
 
   function showCabanias(){
