@@ -39,16 +39,16 @@ class CategoriaModel{
     $sentencia->execute(array($valor,$id_categoria));
   }
 
-  function eliminarCategoria($id_categoria,$estrellas){
+  function eliminarCategoria($id_categoria){
     $sentencia = $this->db->prepare("delete from categoria where id_categoria=?");
     $sentencia->execute(array($id_categoria));
-    $this->eliminarCabaniasPorCategoria($estrellas);
+    $this->eliminarCabaniasPorCategoria($id_categoria);
 
   }
 
-  function eliminarCabaniasPorCategoria($estrellas){
+  function eliminarCabaniasPorCategoria($id_categoria){
     $sentencia = $this->db->prepare("delete from cabania where id_categoria=?");
-    $sentencia->execute(array($estrellas));
+    $sentencia->execute(array($id_categoria));
   }
 
   function crearCategoria($valor){

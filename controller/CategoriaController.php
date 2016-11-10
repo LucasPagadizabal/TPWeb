@@ -53,8 +53,7 @@ class CategoriaController{
 
   function eliminarCategoria(){
     $id_categoria = $_GET["id_categoria"];
-    $estrellas = $_GET["estrella"];
-    $this->modelCategoria->eliminarCategoria($id_categoria,$estrellas);
+    $this->modelCategoria->eliminarCategoria($id_categoria);
     $this->controllerAdmin->mostrarListaCabanias();
   }
 
