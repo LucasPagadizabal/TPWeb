@@ -1,6 +1,12 @@
+
 {if isset($cabanias)}
+
+<div class="conteiner">
+  <a class="nav-link" href="mostrarLogin">Log in</a>
+</div>
+
 {foreach from=$cabanias item=cabania}
-<div class="panel">
+<div class="panel ">
   <p>
     <a class="nav-link-cabania" href="cabania" data-idcabania="{$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
     <div class="panel">
@@ -12,7 +18,7 @@
       {$cabania["comentarios"]|truncate:15}
     </p>
   </div>
-  
+
   <div class="cabaniaDisponibilidad">
     {if $cabania["ocupada"]}
     <div class="panel alerta-danger">

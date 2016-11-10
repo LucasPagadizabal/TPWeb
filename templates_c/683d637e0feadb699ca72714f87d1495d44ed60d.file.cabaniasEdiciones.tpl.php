@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-22 19:55:56
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-09 22:21:27
          compiled from ".\templates\cabaniasEdiciones.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:16916580ba80b540a79-08130155%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '683d637e0feadb699ca72714f87d1495d44ed60d' => 
     array (
       0 => '.\\templates\\cabaniasEdiciones.tpl',
-      1 => 1477158952,
+      1 => 1478726484,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_580ba80b5adce8_13187871')) {function content_580ba80b5adce8_13187871($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_580ba80b5adce8_13187871')) {function content_580ba80b5adce8_13187871($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\projects\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><div class="coteiner panel">
   <h1>Crear nueva cabaña</h1>
   <form class="conteiner panel ajaxForm" href="index.php?action=crearCabania" method="post" enctype="multipart/form-data">
@@ -55,7 +55,7 @@ $_smarty_tpl->tpl_vars['categoria']->_loop = true;
       <button class="btn btn-success nav-link" href="editorCategorias" type="button">Editar Categorias</button>
       </div>
     </div>
-    <div class="row">
+    <div class="form-group">
       <button class="btn btn-success nav-link" type="button" href="editorBBDD">ABM de Base de Datos</button>
     </div>
     <div class="form-group"><button class="btn btn-primary" type="submit" name="button">Enviar</button></div>

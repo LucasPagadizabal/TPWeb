@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2016 a las 07:00:56
+-- Tiempo de generación: 10-11-2016 a las 03:41:13
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -39,8 +39,7 @@ CREATE TABLE `cabania` (
 --
 
 INSERT INTO `cabania` (`id_cabania`, `nombre`, `id_categoria`, `comentarios`, `ocupada`) VALUES
-(259, 'hilton', 1, 'ek', 1),
-(260, 'Sheratton', 4, 'hola ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta', 0);
+(2, '34', 4, '455', 0);
 
 -- --------------------------------------------------------
 
@@ -58,19 +57,19 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `estrella`) VALUES
-(2, 3),
-(5, 44);
+(6, 6);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
+-- Estructura de tabla para la tabla `comentario`
 --
 
-CREATE TABLE `cliente` (
-  `id_cliente` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `telefono` int(11) NOT NULL
+CREATE TABLE `comentario` (
+  `id_comentario` int(11) NOT NULL,
+  `mensaje` varchar(1000) NOT NULL,
+  `puntaje` int(1) NOT NULL,
+  `fk_id_cabania` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -159,20 +158,45 @@ INSERT INTO `imagen` (`id_imagen`, `path`, `fk_id_cabania`) VALUES
 (67, 'images/5802a272a2668_04.jpg', 260),
 (68, 'images/5803ffb1ec4e1_star.png', 261),
 (69, 'images/58058ee13b5c0_34592_1514413618243_1171516246_31427318_7208822_n.jpg', 262),
-(70, 'images/58059009c4361_12607083_564804770336503_1897956480_n.jpg', 263);
+(70, 'images/58059009c4361_12607083_564804770336503_1897956480_n.jpg', 263),
+(71, 'images/5811faa72111e_collections-2.png', 261),
+(72, 'images/5811fc43d1ab0_capture-20160820-131740.png', 262),
+(73, 'images/5811fc43df2bc_capture-20160820-132026.png', 262),
+(74, 'images/581200060fc38_capture-20160820-131740.png', 263),
+(75, 'images/5812000624d43_capture-20160820-132026.png', 263),
+(76, 'images/581200062d78a_capture-20160820-132026-vert.jpg', 263),
+(77, 'images/5812030245649_capture-20160820-132026-vert.jpg', 264),
+(78, 'images/5812031bc5cc6_capture-20160820-131740.png', 265),
+(79, 'images/5812031bcd5be_capture-20160820-132026.png', 265),
+(80, 'images/5812031bdeb26_capture-20160820-132026-vert.jpg', 265),
+(81, 'images/5823905bde5f4_04.jpg', 266),
+(82, 'images/582391fd1b63d_star.png', 267),
+(83, 'images/5823926b6e9b3_04.jpg', 268),
+(84, 'images/5823988629d06_04.jpg', 269),
+(85, 'images/58239c48c0fc4_04.jpg', 1),
+(86, 'images/58239c772a387_star.png', 1),
+(87, 'images/5823a628aca2d_04.jpg', 1),
+(88, 'images/5823db291348f_04.jpg', 2);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `reserva`
+-- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE `reserva` (
-  `id_reserva` int(11) NOT NULL,
-  `id_cliente` int(11) NOT NULL,
-  `id_cabania` int(11) NOT NULL,
-  `fecha` date NOT NULL
+CREATE TABLE `usuario` (
+  `id_usuario` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contrasenia` varchar(255) NOT NULL,
+  `admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `email`, `contrasenia`, `admin`) VALUES
+(11, 'g', 'b2f5ff47436671b6e533d8dc3614845d', 0);
 
 --
 -- Índices para tablas volcadas
@@ -191,10 +215,10 @@ ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Indices de la tabla `cliente`
+-- Indices de la tabla `comentario`
 --
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id_cliente`);
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_comentario`);
 
 --
 -- Indices de la tabla `imagen`
@@ -203,10 +227,10 @@ ALTER TABLE `imagen`
   ADD PRIMARY KEY (`id_imagen`);
 
 --
--- Indices de la tabla `reserva`
+-- Indices de la tabla `usuario`
 --
-ALTER TABLE `reserva`
-  ADD PRIMARY KEY (`id_reserva`);
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -216,27 +240,27 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de la tabla `cabania`
 --
 ALTER TABLE `cabania`
-  MODIFY `id_cabania` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=264;
+  MODIFY `id_cabania` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT de la tabla `cliente`
+-- AUTO_INCREMENT de la tabla `comentario`
 --
-ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `comentario`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `imagen`
 --
 ALTER TABLE `imagen`
-  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 --
--- AUTO_INCREMENT de la tabla `reserva`
+-- AUTO_INCREMENT de la tabla `usuario`
 --
-ALTER TABLE `reserva`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

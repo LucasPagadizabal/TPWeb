@@ -25,6 +25,10 @@ class ConfigApp{
   public static $ACTION_DELETE_BBDD = "deleteBBDD";
   public static $ACTION_CARGAR_BBDD = "cargarBBDD";
 
+  public static $ACTION_MOSTRAR_LOGIN = "mostrarLogin";
+  public static $ACTION_CREAR_USUARIO = "crearUsuario";
+  public static $ACTION_LOGIN = "login";
+
 
 
 }

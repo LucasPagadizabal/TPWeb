@@ -1,8 +1,8 @@
 <?php
 require_once ('model/CabaniaModel.php');
-require_once ('controller/CabaniaController.php');
-require_once ('view/AdminView.php');
 require_once ('model/CategoriaModel.php');
+// require_once ('controller/CabaniaController.php');
+require_once ('view/AdminView.php');
 
 class AdminController{
 
@@ -11,8 +11,8 @@ class AdminController{
 
   function __construct(){
     $this->modelCabania = new CabaniaModel();
-    $this->view = new AdminView();
     $this->modelCategoria = new CategoriaModel();
+    $this->view = new AdminView();
   }
 
   function crearCabania(){

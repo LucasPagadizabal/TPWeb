@@ -28,18 +28,7 @@ class CabaniaController{
     $this->view->mostrarListaCabanias($cabanias, true);
   }
 
-  function editorBBDD(){
-    $this->view->mostrarEditorBBDD();
-  }
-  function deleteBBDD(){
-    $this->model->borrarBBDD();
-    $this->mostrarListaCabanias();
-  }
 
-  function cargarBBDD(){
-    $this->model->cargarBBDD();
-
-  }
 
 }
 

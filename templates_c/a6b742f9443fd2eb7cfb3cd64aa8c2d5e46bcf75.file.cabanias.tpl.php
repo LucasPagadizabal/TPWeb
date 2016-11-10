@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-10-22 19:56:38
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-10 01:12:26
          compiled from ".\templates\cabanias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:26496580ba0710dc8d9-86152859%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a6b742f9443fd2eb7cfb3cd64aa8c2d5e46bcf75' => 
     array (
       0 => '.\\templates\\cabanias.tpl',
-      1 => 1477158994,
+      1 => 1478736588,
       2 => 'file',
     ),
   ),
@@ -24,14 +24,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_580ba0711f52e9_78638191')) {function content_580ba0711f52e9_78638191($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
-?><?php if (isset($_smarty_tpl->tpl_vars['cabanias']->value)){?>
+<?php if ($_valid && !is_callable('content_580ba0711f52e9_78638191')) {function content_580ba0711f52e9_78638191($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\projects\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+?>
+<?php if (isset($_smarty_tpl->tpl_vars['cabanias']->value)){?>
+
+<div class="conteiner">
+  <a class="nav-link" href="mostrarLogin">Log in</a>
+</div>
+
 <?php  $_smarty_tpl->tpl_vars['cabania'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cabania']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['cabanias']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['cabania']->key => $_smarty_tpl->tpl_vars['cabania']->value){
 $_smarty_tpl->tpl_vars['cabania']->_loop = true;
 ?>
-<div class="panel">
+<div class="panel ">
   <p>
     <a class="nav-link-cabania" href="cabania" data-idcabania="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
 "><h3>Cabaña <?php echo $_smarty_tpl->tpl_vars['cabania']->value["nombre"];?>
@@ -47,7 +53,7 @@ $_smarty_tpl->tpl_vars['cabania']->_loop = true;
 
     </p>
   </div>
-  
+
   <div class="cabaniaDisponibilidad">
     <?php if ($_smarty_tpl->tpl_vars['cabania']->value["ocupada"]){?>
     <div class="panel alerta-danger">

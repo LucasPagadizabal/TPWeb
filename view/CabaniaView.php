@@ -20,9 +20,6 @@ class CabaniaView{
     $this->smarty->assign("cabania",$cabania);
     $this->smarty->display("cabaniaComentario.tpl");
   }
-  function mostrarEditorBBDD(){
-    $this->smarty->display("editorBBDD.tpl");
-  }
 
 }
 ?>

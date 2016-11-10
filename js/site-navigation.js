@@ -27,6 +27,7 @@ $(document).ready(function(){
     });
 
     $(".ajaxForm").submit(function(){
+      console.log("sdf");
       event.preventDefault();
       formData = new FormData(this);
       var dir = $(this).attr("href");
@@ -38,6 +39,7 @@ $(document).ready(function(){
         cache: false,
         processData: false,
         success: function(data){
+          console.log(data);
           $("#articulo").html(data);
           initDynamicEventHandlers();
         }
