@@ -107,11 +107,7 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   break;
 
 
-
-
-
-
-
+//login
 
   case ConfigApp::$ACTION_CREAR_USUARIO:
   $LoginController->crearUsuario();
@@ -121,6 +117,9 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   break;
   case ConfigApp::$ACTION_LOGIN:
   $LoginController->login();
+  break;
+  case ConfigApp::$ACTION_CERRAR_SESION:
+  $LoginController->cerrarSesion();
   break;
 }
 

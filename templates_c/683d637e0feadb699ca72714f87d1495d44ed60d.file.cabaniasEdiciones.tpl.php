@@ -1,33 +1,35 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-10 04:18:51
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-10 05:50:01
          compiled from ".\templates\cabaniasEdiciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:280725823e71bc3fcb8-89277719%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:205605823f8665976f5-49053840%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '683d637e0feadb699ca72714f87d1495d44ed60d' => 
     array (
       0 => '.\\templates\\cabaniasEdiciones.tpl',
-      1 => 1478747756,
+      1 => 1478753398,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '280725823e71bc3fcb8-89277719',
+  'nocache_hash' => '205605823f8665976f5-49053840',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5823f8666b7862_95799260',
   'variables' => 
   array (
+    'privilegio' => 0,
     'categorias' => 0,
     'categoria' => 0,
     'cabanias' => 0,
     'cabania' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5823e71bdaa1d4_30173942',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5823e71bdaa1d4_30173942')) {function content_5823e71bdaa1d4_30173942($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
-?><div class="coteiner panel">
+<?php if ($_valid && !is_callable('content_5823f8666b7862_95799260')) {function content_5823f8666b7862_95799260($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+?><?php if ($_smarty_tpl->tpl_vars['privilegio']->value==1){?>
+<div class="coteiner panel">
   <h1>Crear nueva cabaña</h1>
   <form class="conteiner panel ajaxForm" href="index.php?action=crearCabania" method="post" enctype="multipart/form-data">
     <div class="row">
@@ -115,4 +117,7 @@ $_smarty_tpl->tpl_vars['cabania']->_loop = true;
 <?php } ?>
 
 <?php }?>
+<?php }else{ ?>
+  <h1>No posee permiso</h1>
+  <?php }?>
 <?php }} ?>

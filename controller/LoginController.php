@@ -37,13 +37,20 @@ class LoginController{
     $pass = $_POST['pass'];
     $pass = md5($pass);
 
-    $hash = $this->model->getUser($user)['contrasenia'];
-    if($hash == $pass){
-      session_start();
-        $_SESSION['USER'] = $user;
-        header("Location: index.php?action=admin");
+    $usuario = $this->model->getUser($user);
+    if($usuario["contrasenia"] == $pass){
+        session_destroy();
+        session_start();
+        $_SESSION['privilegio'] = $usuario["privilegio"];
+        //header("Location: index.php?action=admin");
+        print_r("Privilegio ".$_SESSION['privilegio']);
         die();
     }
+  }
+
+  function cerrarSesion(){
+    echo "string";
+    session_destroy();
   }
 }
 

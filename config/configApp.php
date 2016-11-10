@@ -28,6 +28,8 @@ class ConfigApp{
   public static $ACTION_MOSTRAR_LOGIN = "mostrarLogin";
   public static $ACTION_CREAR_USUARIO = "crearUsuario";
   public static $ACTION_LOGIN = "login";
+  public static $ACTION_CERRAR_SESION = "cerrarSesion";
+
 
 
 

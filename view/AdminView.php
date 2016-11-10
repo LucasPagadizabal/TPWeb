@@ -23,9 +23,10 @@ class AdminView{
     $this->smarty->assign("categorias",$categoria);
     $this->smarty->display("cabaniasEdiciones.tpl");
   }
-  function iniciarView($cabanias,$categorias){
+  function iniciarView($cabanias,$categorias,$priv){
     $this->smarty->assign("categorias",$categorias);
     $this->smarty->assign("cabanias",$cabanias);
+    $this->smarty->assign("privilegio",$priv);
     $this->smarty->display("cabaniasEdiciones.tpl");
   }
 }

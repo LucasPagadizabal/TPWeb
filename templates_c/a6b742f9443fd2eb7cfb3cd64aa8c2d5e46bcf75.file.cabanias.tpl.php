@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-10 04:17:59
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-10 05:59:15
          compiled from ".\templates\cabanias.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:250235823e03a007dd4-50990762%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:24235823f7f664b6a1-82934720%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a6b742f9443fd2eb7cfb3cd64aa8c2d5e46bcf75' => 
     array (
       0 => '.\\templates\\cabanias.tpl',
-      1 => 1478747756,
+      1 => 1478753513,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '250235823e03a007dd4-50990762',
+  'nocache_hash' => '24235823f7f664b6a1-82934720',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5823e03a0f85b4_33245134',
+  'unifunc' => 'content_5823f7f673f765_10608623',
   'variables' => 
   array (
     'cabanias' => 0,
@@ -24,12 +24,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5823e03a0f85b4_33245134')) {function content_5823e03a0f85b4_33245134($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5823f7f673f765_10608623')) {function content_5823f7f673f765_10608623($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?>
 <?php if (isset($_smarty_tpl->tpl_vars['cabanias']->value)){?>
 
 <div class="conteiner">
   <a class="nav-link" href="mostrarLogin">Log in</a>
+</div>
+<div class="conteiner">
+  <a class="nav-link" href="cerrarSesion">Cerrar Sesion</a>
 </div>
 
 <?php  $_smarty_tpl->tpl_vars['cabania'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cabania']->_loop = false;

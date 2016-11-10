@@ -1,3 +1,4 @@
+{if $privilegio == 1}
 <div class="coteiner panel">
   <h1>Crear nueva cabaña</h1>
   <form class="conteiner panel ajaxForm" href="index.php?action=crearCabania" method="post" enctype="multipart/form-data">
@@ -69,3 +70,6 @@
 {/foreach}
 
 {/if}
+{else}
+  <h1>No posee permiso</h1>
+  {/if}
