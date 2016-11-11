@@ -42,4 +42,18 @@
       </div>
     </div>
 </div>
+{if $sesion == 1}
+  <div class="panel">
+    <h2>Comentarios</h2>
+    <div class="comentarios">
+
+    </div>
+    <div class="">
+
+    </div>
+  </div>
+{/if}
 <script src="js/estrellas.js" charset="utf-8"></script>
+<script src="js/apiComentario.js">
+
+</script>

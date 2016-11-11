@@ -30,7 +30,7 @@ class ConfigApp{
   public static $ACTION_LOGIN = "login";
   public static $ACTION_CERRAR_SESION = "cerrarSesion";
 
-
+  public static $ACTION_EDITAR_USUARIO = "editarUsuario";
 
 
 }

@@ -14,20 +14,30 @@ class CabaniaController{
 
   function iniciar(){
     $cabanias = $this->model->getCabanias();
-    $this->view->iniciarView($cabanias);
+    $session = $this->checkSession();
+    $this->view->iniciarView($cabanias,$session);
   }
 
   function showCabania(){
     $id_cabania = $_GET["id_cabania"];
     $cabania = $this->model->getCabania($id_cabania);
-    $this->view->mostrarCabania($cabania, true);
+    $session = $this->checkSession();
+    $this->view->mostrarCabania($cabania, true,$session);
   }
 
   function mostrarListaCabanias(){
+    $session = $this->checkSession();
     $cabanias = $this->model->getCabanias();
-    $this->view->mostrarListaCabanias($cabanias, true);
+    $this->view->mostrarListaCabanias($cabanias, true,$session);
   }
 
+  function checkSession(){
+    if (isset($_SESSION["privilegio"])) {
+      return true;
+    }else{
+      return false;
+    }
+  }
 
 
 }

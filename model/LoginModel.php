@@ -17,5 +17,18 @@ class LoginModel
     $sentencia->execute(array($user));
     return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
+
+  function getUsers(){
+    $sentencia = $this->db->prepare('SELECT * FROM  usuario');
+    $sentencia->execute(array());
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function editarUsuario($user){
+    $usuario = $this->getUser($user);
+    $sentencia = $this->db->prepare("UPDATE usuario SET privilegio=? WHERE email=?");
+    $sentencia->execute(array(!$usuario["privilegio"],$user));
+  }
+
 }
  ?>

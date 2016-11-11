@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-10 06:18:27
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-11 02:37:25
          compiled from ".\templates\cabaniasEdiciones.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:37115824032356c036-62123288%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '683d637e0feadb699ca72714f87d1495d44ed60d' => 
     array (
       0 => '.\\templates\\cabaniasEdiciones.tpl',
-      1 => 1478753398,
+      1 => 1478828241,
       2 => 'file',
     ),
   ),
@@ -15,17 +15,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_582403236afe35_32207294',
   'variables' => 
   array (
     'privilegio' => 0,
     'categorias' => 0,
     'categoria' => 0,
+    'usuarios' => 0,
+    'usuario' => 0,
     'cabanias' => 0,
     'cabania' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_582403236afe35_32207294',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_582403236afe35_32207294')) {function content_582403236afe35_32207294($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><?php if ($_smarty_tpl->tpl_vars['privilegio']->value==1){?>
@@ -57,15 +59,31 @@ $_smarty_tpl->tpl_vars['categoria']->_loop = true;
       <button class="btn btn-success nav-link" href="editorCategorias" type="button">Editar Categorias</button>
       </div>
     </div>
-    <div class="form-group">
-      <button class="btn btn-success nav-link" type="button" href="editorBBDD">ABM de Base de Datos</button>
-    </div>
     <div class="form-group"><button class="btn btn-primary" type="submit" name="button">Enviar</button></div>
   </form>
 </div>
 <div id="cabaniaCreadaMensaje"></div>
 </div>
 
+<div class="panel">
+  <div class="panel">
+    <h4>Editar Usuario</h4>
+    <form class="ajaxForm" href="index.php?action=editarUsuario" method="post">
+      <select name="nameUser" class="form-control"  name="categoria">
+        <?php  $_smarty_tpl->tpl_vars['usuario'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['usuario']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['usuarios']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['usuario']->key => $_smarty_tpl->tpl_vars['usuario']->value){
+$_smarty_tpl->tpl_vars['usuario']->_loop = true;
+?>
+        <option  value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['email'];?>
+"><?php echo $_smarty_tpl->tpl_vars['usuario']->value['email'];?>
+</option>
+        <?php } ?>
+      </select>
+      <button type="submit" name="editUsuario">Editar Usuario</button>
+    </form>
+  </div>
+</div>
 
 <?php if (isset($_smarty_tpl->tpl_vars['cabanias']->value)){?>
 <?php  $_smarty_tpl->tpl_vars['cabania'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cabania']->_loop = false;
@@ -117,6 +135,7 @@ $_smarty_tpl->tpl_vars['cabania']->_loop = true;
 <?php } ?>
 
 <?php }?>
+
 <?php }else{ ?>
   <h1>No posee permiso</h1>
   <?php }?>

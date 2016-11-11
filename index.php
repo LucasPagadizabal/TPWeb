@@ -3,13 +3,11 @@
 require_once("config/configApp.php");
 require_once("controller/CabaniaController.php");
 require_once("controller/LoginController.php");
-require_once("controller/AdminBBDDController.php");
 require_once("controller/AdminController.php");
 require_once("controller/CategoriaController.php");
 
 $CabaniaController = new CabaniaController();
 $AdminController = new AdminController();
-$AdminBBDDController = new AdminBBDDController();
 $CategoriaController = new CategoriaController();
 $LoginController = new LoginController();
 
@@ -90,23 +88,6 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   $CategoriaController->crearCategoria();
   break;
 
-
-  // ACTIONS DE ADMIN BBDD
-
-
-  case ConfigApp::$ACTION_EDITOR_BBDD:
-  $AdminBBDDController->editorBBDD();
-  break;
-
-  case ConfigApp::$ACTION_DELETE_BBDD:
-  $AdminBBDDController->deleteBBDD();
-  break;
-
-  case ConfigApp::$ACTION_CARGAR_BBDD:
-  $AdminBBDDController->cargarBBDD();
-  break;
-
-
 //login
 
   case ConfigApp::$ACTION_CREAR_USUARIO:
@@ -120,6 +101,10 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   break;
   case ConfigApp::$ACTION_CERRAR_SESION:
   $LoginController->cerrarSesion();
+  break;
+
+  case ConfigApp::$ACTION_EDITAR_USUARIO:
+  $AdminController->editarUsuario();
   break;
 }
 

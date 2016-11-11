@@ -39,17 +39,21 @@ class LoginController{
 
     $usuario = $this->model->getUser($user);
     if($usuario["contrasenia"] == $pass){
+        $msj="Usted se logeo correctamente";
         session_destroy();
         session_start();
         $_SESSION['privilegio'] = $usuario["privilegio"];
-        //header("Location: index.php?action=admin");
-        print_r("Privilegio ".$_SESSION['privilegio']);
+        $this->view->mostrarForm($msj);
+      //  header("Location: index.php?action=mostrarLogin");
         die();
     }
+    $msj="No se pudo ingresar, error de Usuario y/o Clave";
+    $this->view->mostrarForm($msj);
+
+
   }
 
   function cerrarSesion(){
-    echo "string";
     session_destroy();
   }
 }

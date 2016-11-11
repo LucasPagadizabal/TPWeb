@@ -21,15 +21,25 @@
       <button class="btn btn-success nav-link" href="editorCategorias" type="button">Editar Categorias</button>
       </div>
     </div>
-    <div class="form-group">
-      <button class="btn btn-success nav-link" type="button" href="editorBBDD">ABM de Base de Datos</button>
-    </div>
     <div class="form-group"><button class="btn btn-primary" type="submit" name="button">Enviar</button></div>
   </form>
 </div>
 <div id="cabaniaCreadaMensaje"></div>
 </div>
 
+<div class="panel">
+  <div class="panel">
+    <h4>Editar Usuario</h4>
+    <form class="ajaxForm" href="index.php?action=editarUsuario" method="post">
+      <select name="nameUser" class="form-control"  name="categoria">
+        {foreach from=$usuarios item=usuario}
+        <option  value="{$usuario['email']}">{$usuario['email']}</option>
+        {/foreach}
+      </select>
+      <button type="submit" name="editUsuario">Editar Usuario</button>
+    </form>
+  </div>
+</div>
 
 {if isset($cabanias)}
 {foreach from=$cabanias item=cabania}
@@ -70,6 +80,7 @@
 {/foreach}
 
 {/if}
+
 {else}
   <h1>No posee permiso</h1>
   {/if}

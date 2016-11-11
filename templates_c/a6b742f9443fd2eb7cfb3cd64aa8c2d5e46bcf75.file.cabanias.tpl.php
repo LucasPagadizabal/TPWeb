@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-10 06:40:12
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-11 16:21:39
          compiled from ".\templates\cabanias.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1992958240320387036-00975185%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a6b742f9443fd2eb7cfb3cd64aa8c2d5e46bcf75' => 
     array (
       0 => '.\\templates\\cabanias.tpl',
-      1 => 1478756411,
+      1 => 1478877696,
       2 => 'file',
     ),
   ),
@@ -46,7 +46,7 @@ $_smarty_tpl->tpl_vars['cabania']->_loop = true;
 ?>
 <div class="panel ">
   <p>
-    <a class="nav-link-cabania" href="cabania" data-idcabania="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
+    <a class="comentarios" href="cabania" data-idcabania="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
 "><h3>Cabaña <?php echo $_smarty_tpl->tpl_vars['cabania']->value["nombre"];?>
 </h3></a>
     <div class="panel">

@@ -8,27 +8,19 @@ class CabaniaView{
   function __construct(){
     $this->smarty = new Smarty();
   }
-  function iniciarView($cabanias){
-    if (isset($_SESSION["privilegio"])) {
-      $session = true;
-    }else{
-      $session = false;
-    }
+
+  function iniciarView($cabanias,$session){
     $this->smarty->assign("cabanias",$cabanias);
     $this->smarty->assign("sesion",$session);
     $this->smarty->display("body.tpl");
   }
-  function mostrarListaCabanias($cabanias){
-    if (isset($_SESSION["privilegio"])) {
-      $session = true;
-    }else{
-      $session = false;
-    }
+  function mostrarListaCabanias($cabanias,$session){
     $this->smarty->assign("cabanias",$cabanias);
-      $this->smarty->assign("sesion",$session);
+    $this->smarty->assign("sesion",$session);
     $this->smarty->display("cabanias.tpl");
   }
-  function mostrarCabania($cabania){
+  function mostrarCabania($cabania,$session){
+    $this->smarty->assign("sesion",$session);
     $this->smarty->assign("cabania",$cabania);
     $this->smarty->display("cabaniaComentario.tpl");
   }

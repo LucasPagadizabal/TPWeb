@@ -14,7 +14,7 @@
 {foreach from=$cabanias item=cabania}
 <div class="panel ">
   <p>
-    <a class="nav-link-cabania" href="cabania" data-idcabania="{$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
+    <a class="comentarios" href="cabania" data-idcabania="{$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
     <div class="panel">
       <p>
         Pertenece a la categoria {$cabania["categoria"]} estrella/as.

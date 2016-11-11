@@ -1,0 +1,11 @@
+{{#comentarios}}
+
+  <div>
+    {{texto}}
+  </div>
+
+  <div>
+    {{puntaje}}
+  </div>
+
+{{/comentarios}}

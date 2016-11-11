@@ -1,17 +1,20 @@
 <?php
 require_once ('model/CabaniaModel.php');
 require_once ('model/CategoriaModel.php');
-// require_once ('controller/CabaniaController.php');
+require_once ('model/LoginModel.php');
 require_once ('view/AdminView.php');
 session_start();
 class AdminController{
 
   protected $modelCategoria;
   protected $modelCabania;
+  protected $view;
+  protected $modelLogin;
 
   function __construct(){
     $this->modelCabania = new CabaniaModel();
     $this->modelCategoria = new CategoriaModel();
+    $this->modelLogin = new LoginModel();
     $this->view = new AdminView();
 
   }
@@ -64,7 +67,8 @@ class AdminController{
     }
     $cabanias = $this->modelCabania->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
-    $this->view->mostrarListaCabanias($cabanias, $categorias,$priv);
+    $usuarios = $this->modelLogin->getUsers();
+    $this->view->mostrarListaCabanias($cabanias, $categorias,$priv,$usuarios);
   }
 
   function showCabanias(){
@@ -75,7 +79,14 @@ class AdminController{
     }
     $cabanias = $this->modelCabania->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
-    $this->view->iniciarView($cabanias, $categorias,$priv);
+    $usuarios = $this->modelLogin->getUsers();
+    $this->view->iniciarView($cabanias, $categorias,$priv,$usuarios);
+  }
+
+  function editarUsuario(){
+    $user = $_POST["nameUser"];
+    $this->modelLogin->editarUsuario($user);
+    $this->mostrarListaCabanias();
   }
 }
 

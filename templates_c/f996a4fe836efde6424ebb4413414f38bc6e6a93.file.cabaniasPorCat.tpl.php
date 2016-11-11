@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-10 06:23:41
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-10 14:54:55
          compiled from ".\templates\cabaniasPorCat.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:282595824045de70ca3-51475725%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f996a4fe836efde6424ebb4413414f38bc6e6a93' => 
     array (
       0 => '.\\templates\\cabaniasPorCat.tpl',
-      1 => 1477160820,
+      1 => 1478782719,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5824045e0c7cc1_51513446',
   'variables' => 
   array (
     'categorias' => 0,
@@ -25,8 +27,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'mensaje' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5824045e0c7cc1_51513446',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5824045e0c7cc1_51513446')) {function content_5824045e0c7cc1_51513446($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><div class="panel">
