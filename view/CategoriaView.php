@@ -14,8 +14,7 @@ class CategoriaView{
     $this->smarty->display("cabaniasPorCat.tpl");
   }
 
-  function mostrarCabaniasCat($cabanias,$mensaje,$categorias,$session){
-    $this->smarty->assign("sesion",$session);
+  function mostrarCabaniasCat($cabanias,$mensaje,$categorias){
     $this->smarty->assign("lista", true);
     $this->smarty->assign("mensaje", $mensaje);
     $this->smarty->assign("categorias", $categorias);

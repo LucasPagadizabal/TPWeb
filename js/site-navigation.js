@@ -27,7 +27,6 @@ $(document).ready(function(){
     });
 
     $(".ajaxForm").submit(function(){
-      console.log("sdf");
       event.preventDefault();
       formData = new FormData(this);
       var dir = $(this).attr("href");
@@ -39,7 +38,6 @@ $(document).ready(function(){
         cache: false,
         processData: false,
         success: function(data){
-          console.log(data);
           $("#articulo").html(data);
           initDynamicEventHandlers();
         }
@@ -58,14 +56,58 @@ $(document).ready(function(){
     $(".nav-link-cabania").click(function (){
       event.preventDefault();
       var dir = $(this).attr("href");
+      var id = $(this).attr("data-idcabania");
       $.get("index.php?action="+dir,{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
         $('#articulo').html(data);
+        comentariosAjax(id);
         initDynamicEventHandlers();
       });
     });
+
+
+    $(".formApi").submit(function(e){//creacion de comentarios API
+      console.log("entro");
+      e.preventDefault();
+      $.post("api/comentarios",{texto:$(".text-api").val(),puntaje:$(".puntaje-api").val(),id_cabania:$(".id_cabania-api").val()},
+      function(data) {
+        console.log(data);
+        comentariosAjax($(".id_cabania-api").val());
+        initDynamicEventHandlers();
+      }
+    );
+    });
+
+  }//cierre de super funcion
+
+
+
+//cargado de comentarios de la api
+  function comentariosAjax(id_cabania) {
+    $.ajax(
+      {
+        method:"GET",
+        dataType: "JSON",
+        url: "api/comentarios/" +id_cabania,//traer id de la cabania que pertenece
+        success:function(data) {
+          createComentarios(data);
+         initDynamicEventHandlers();
+        }
+      }
+
+    )
+  }
+  //crear tpl de Mustache
+  function createComentarios(comentarios){
+    $.ajax({ url: 'js/templates/comentarios.mst',
+     success: function(templateReceived) {
+       var rendered = Mustache.render(templateReceived,{paquete:comentarios});
+       $("#div-com").html(rendered);
+     }
+    });
   }
 
-  function partialRender(dir, functionDestino){
+
+  function partialRender(dir, functionDestino){1
     $.ajax({
       url: dir,
       method:"GET",

@@ -22,13 +22,13 @@ class CabaniaController{
     $id_cabania = $_GET["id_cabania"];
     $cabania = $this->model->getCabania($id_cabania);
     $session = $this->checkSession();
-    $this->view->mostrarCabania($cabania, true,$session);
+    $this->view->mostrarCabania($cabania,$session);
   }
 
   function mostrarListaCabanias(){
     $session = $this->checkSession();
     $cabanias = $this->model->getCabanias();
-    $this->view->mostrarListaCabanias($cabanias, true,$session);
+    $this->view->mostrarListaCabanias($cabanias,$session);
   }
 
   function checkSession(){

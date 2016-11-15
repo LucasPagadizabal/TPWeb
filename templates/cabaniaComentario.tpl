@@ -42,18 +42,24 @@
       </div>
     </div>
 </div>
-{if $sesion == 1}
   <div class="panel">
     <h2>Comentarios</h2>
-    <div class="comentarios">
+      <div class="container panel" id="div-com">
 
-    </div>
-    <div class="">
-
-    </div>
+      </div>
+    {if $sesion == 1}
+    <form class="formApi form-inline" href="api/comentarios" method="post">
+      <select class="puntaje-api" name="puntaje">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <input maxlength=70 class="text-api" type="text" name="texto" placeholder="Comentario...">
+      <input class="id_cabania-api" type="hidden" name="id_cabania" value="{$cabania['id_cabania']}">
+      <button type="submit" name="button">Comentar</button>
+    </form>
   </div>
 {/if}
 <script src="js/estrellas.js" charset="utf-8"></script>
-<script src="js/apiComentario.js">
-
-</script>

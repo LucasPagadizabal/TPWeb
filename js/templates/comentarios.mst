@@ -1,11 +1,11 @@
-{{#comentarios}}
-
-  <div>
-    {{texto}}
+<div class="row">
+{{#paquete}}
+      <div class="col-md-9">
+        {{texto}}
+      </div>
+      <div class="col-md-3">
+         Puntaje : {{puntaje}}
+      </div>
   </div>
-
-  <div>
-    {{puntaje}}
-  </div>
-
-{{/comentarios}}
+{{/paquete}}
+</div>

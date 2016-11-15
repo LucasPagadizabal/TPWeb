@@ -14,18 +14,35 @@ class ComentarioApi extends Api
   }
 
   protected function comentarios($argumentos){
-   if($this->method == 'GET' && count($argumentos)==0){
-     return $this->model->getComentarios();
-   }
-   else{
-     if($this->method == 'GET' && count($argumentos)>0){
-       return $this->model->getComentariosByIdCabania($argumentos[0]);
-     }
-    else{
-      return "Only accepts GET";
+    switch ($this->method) {
+      case 'GET':
+          return $this->model->getComentariosByIdCabania($argumentos[0]);
+        break;
+
+      case 'DELETE':
+            if(count($argumentos)>0){
+              $error['Error'] = "El comentario no existe";
+              $success['Success'] = "El comentario se borro";
+              $filasAfectadas = $this->model->eliminarComentario($argumentos[0]);
+                return ($filasAfectadas == 1) ? $success : $error;
+              }
+        break;
+
+        case 'POST':
+            if(count($argumentos)==0){
+                $error['Error'] = "El comentario no se creo";
+                $id_comentario = $this->model->crearComentario($_POST["texto"],$_POST["puntaje"],$_POST["id_cabania"]);
+              }
+              return ($id_comentario > 0) ? $this->model->getComentario($id_comentario) : $error;
+
+          break;
+      default:
+        "Only GET";
+        break;
     }
+
    }
- }
+
  }
 
 
