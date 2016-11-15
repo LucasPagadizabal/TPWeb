@@ -77,6 +77,19 @@ $(document).ready(function(){
     );
     });
 
+    $(document).on("click",".eliminarComentario",function() {
+      var id_cabania = $(this).attr("id_cabania");
+      var dir = $(this).attr("id_comentario");
+    $.ajax({
+    url: 'api/comentarios/'+dir,
+    type: 'DELETE',
+    success: function(result) {
+        comentariosAjax(id_cabania);
+    }
+});
+
+    })
+
   }//cierre de super funcion
 
 

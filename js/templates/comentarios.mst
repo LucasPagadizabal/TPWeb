@@ -1,11 +1,12 @@
 <div class="row">
 {{#paquete}}
-      <div class="col-md-9">
+      <div class="col-md-7">
         {{texto}}
       </div>
       <div class="col-md-3">
          Puntaje : {{puntaje}}
       </div>
+      <button  class="eliminarComentario col-md-2" id_comentario="{{id_comentario}}" id_cabania="{{id_cabania}}" type="button" name="button">Borrar</button>
   </div>
 {{/paquete}}
 </div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-15 19:24:19
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-15 19:49:31
          compiled from ".\templates\cabaniaComentario.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:62655824712a87e764-17545950%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e40d432c7bc741f1ac5be812e562a7805a8efa36' => 
     array (
       0 => '.\\templates\\cabaniaComentario.tpl',
-      1 => 1479234255,
+      1 => 1479235509,
       2 => 'file',
     ),
   ),
@@ -102,7 +102,7 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <input maxlength=70 class="text-api" type="text" name="texto" placeholder="Comentario...">
+      <input maxlength=60 class="text-api" type="text" name="texto" placeholder="Comentario...">
       <input class="id_cabania-api" type="hidden" name="id_cabania" value="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
 ">
       <button type="submit" name="button">Comentar</button>

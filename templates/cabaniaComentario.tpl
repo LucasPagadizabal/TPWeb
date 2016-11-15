@@ -56,7 +56,7 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <input maxlength=70 class="text-api" type="text" name="texto" placeholder="Comentario...">
+      <input maxlength=60 class="text-api" type="text" name="texto" placeholder="Comentario...">
       <input class="id_cabania-api" type="hidden" name="id_cabania" value="{$cabania['id_cabania']}">
       <button type="submit" name="button">Comentar</button>
     </form>
