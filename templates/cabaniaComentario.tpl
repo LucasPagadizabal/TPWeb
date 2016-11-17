@@ -48,7 +48,7 @@
 
       </div>
     {if $sesion == 1}
-    <form class="formApi form-inline" href="api/comentarios" method="post">
+    <form class="form-inline" href="api/comentarios" method="post">
       <select class="puntaje-api" name="puntaje">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -58,7 +58,7 @@
       </select>
       <input maxlength=60 class="text-api" type="text" name="texto" placeholder="Comentario...">
       <input class="id_cabania-api" type="hidden" name="id_cabania" value="{$cabania['id_cabania']}">
-      <button type="submit" name="button">Comentar</button>
+      <button class="crearComentario" type="button" name="button">Comentar</button>
     </form>
   </div>
 {/if}

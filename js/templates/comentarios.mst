@@ -6,7 +6,8 @@
       <div class="col-md-3">
          Puntaje : {{puntaje}}
       </div>
-      <button  class="eliminarComentario col-md-2" id_comentario="{{id_comentario}}" id_cabania="{{id_cabania}}" type="button" name="button">Borrar</button>
+
+      <a class="eliminarComentario col-md-2" id_comentario="{{id_comentario}}" id_cabania="{{id_cabania}}"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
   </div>
 {{/paquete}}
 </div>
