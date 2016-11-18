@@ -79,7 +79,7 @@ $(document).ready(function(){
 
 
 
-  $(document).on("click",".crearComentario",function(e){//creacion de comentarios con api
+  $(document).on("submit",".crearComentario",function(e){//creacion de comentarios con api
     console.log("entro");
     e.preventDefault();
     $.ajax({
@@ -88,7 +88,10 @@ $(document).ready(function(){
       type : 'POST',
       dataType : 'json',
       success : function() {
-        comentariosAjax($(".id_cabania-api").val());
+        console.log("Asfas");
+        setTimeout(function(){comentariosAjax($('.id_cabania-api').val());},2000);
+        //comentariosAjax($(".id_cabania-api").val());
+
       }
   });
 

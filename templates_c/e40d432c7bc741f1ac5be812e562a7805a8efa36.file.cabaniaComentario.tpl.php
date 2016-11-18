@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-18 17:39:17
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-18 18:23:02
          compiled from ".\templates\cabaniaComentario.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:62655824712a87e764-17545950%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e40d432c7bc741f1ac5be812e562a7805a8efa36' => 
     array (
       0 => '.\\templates\\cabaniaComentario.tpl',
-      1 => 1479487152,
+      1 => 1479489778,
       2 => 'file',
     ),
   ),
@@ -100,7 +100,7 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
 
       </div>
     <?php if ($_smarty_tpl->tpl_vars['sesion']->value){?>
-    <form class="form-inline" href="api/comentarios" method="post">
+    <form class="form-inline crearComentario" href="api/comentarios" method="post">
       <select class="puntaje-api" name="puntaje">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -113,7 +113,7 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
       <input maxlength=60 class="text-api" type="text" name="texto" placeholder="Comentario...">
       <input class="id_cabania-api" type="hidden" name="id_cabania" value="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
 ">
-      <button class="crearComentario" type="button" name="button">Comentar</button>
+      <button class="" type="submit" name="button">Comentar</button>
     </form>
   </div>
 <?php }?>
