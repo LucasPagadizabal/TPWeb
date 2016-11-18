@@ -11,8 +11,12 @@
         {foreach $cabania['imagenes'] as $imagen}
         {if $imagen@index eq 0}
         <li data-target="#myCarousel" data-slide-to="{$imagen@index}" class="active"></li>
+          {if $privilegio}
+            <a class="eliminarImagen" id-imagen="{$imagen['id_imagen']}" href="eliminarImagen">Eliminar Imagen</a>
+          {/if}
         {else}
         <li data-target="#myCarousel" data-slide-to="{$imagen@index}"></li>
+
         {/if}
         {/foreach}
       </ol>
@@ -47,7 +51,7 @@
       <div class="container panel" id="div-com">
 
       </div>
-    {if $sesion == 1}
+    {if $sesion}
     <form class="form-inline" href="api/comentarios" method="post">
       <select class="puntaje-api" name="puntaje">
         <option value="1">1</option>
@@ -56,6 +60,7 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
+      <input class="privilegio" type="hidden" name="privilegio" value="{$privilegio}">
       <input maxlength=60 class="text-api" type="text" name="texto" placeholder="Comentario...">
       <input class="id_cabania-api" type="hidden" name="id_cabania" value="{$cabania['id_cabania']}">
       <button class="crearComentario" type="button" name="button">Comentar</button>

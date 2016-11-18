@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-17 04:36:44
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-18 17:39:17
          compiled from ".\templates\cabaniaComentario.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:62655824712a87e764-17545950%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e40d432c7bc741f1ac5be812e562a7805a8efa36' => 
     array (
       0 => '.\\templates\\cabaniaComentario.tpl',
-      1 => 1479353793,
+      1 => 1479487152,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'cabania' => 0,
+    'privilegio' => 0,
     'imagen' => 0,
     'sesion' => 0,
   ),
@@ -48,9 +49,14 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
         <?php if ($_smarty_tpl->tpl_vars['imagen']->index==0){?>
         <li data-target="#myCarousel" data-slide-to="<?php echo $_smarty_tpl->tpl_vars['imagen']->index;?>
 " class="active"></li>
+          <?php if ($_smarty_tpl->tpl_vars['privilegio']->value){?>
+            <a class="eliminarImagen" id-imagen="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_imagen'];?>
+" href="eliminarImagen">Eliminar Imagen</a>
+          <?php }?>
         <?php }else{ ?>
         <li data-target="#myCarousel" data-slide-to="<?php echo $_smarty_tpl->tpl_vars['imagen']->index;?>
 "></li>
+
         <?php }?>
         <?php } ?>
       </ol>
@@ -93,7 +99,7 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
       <div class="container panel" id="div-com">
 
       </div>
-    <?php if ($_smarty_tpl->tpl_vars['sesion']->value==1){?>
+    <?php if ($_smarty_tpl->tpl_vars['sesion']->value){?>
     <form class="form-inline" href="api/comentarios" method="post">
       <select class="puntaje-api" name="puntaje">
         <option value="1">1</option>
@@ -102,6 +108,8 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
+      <input class="privilegio" type="hidden" name="privilegio" value="<?php echo $_smarty_tpl->tpl_vars['privilegio']->value;?>
+">
       <input maxlength=60 class="text-api" type="text" name="texto" placeholder="Comentario...">
       <input class="id_cabania-api" type="hidden" name="id_cabania" value="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
 ">

@@ -88,6 +88,7 @@ class AdminController{
     $this->modelLogin->editarUsuario($user);
     $this->mostrarListaCabanias();
   }
+
 }
 
  ?>

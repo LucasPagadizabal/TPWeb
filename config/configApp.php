@@ -20,6 +20,7 @@ class ConfigApp{
   public static $ACTION_EDITAR_CATEGORIAS = "editarCategoria";
   public static $ACTION_ELIMINAR_CATEGORIA = "eliminarCategoria";
   public static $ACTION_CREATE_CATEGORIA = "crearCategoria";
+  public static $ACTION_ELIMINAR_IMAGEN = "eliminarImagen";
 
   public static $ACTION_EDITOR_BBDD = "editorBBDD";
   public static $ACTION_DELETE_BBDD = "deleteBBDD";

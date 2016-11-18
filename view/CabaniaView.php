@@ -19,7 +19,8 @@ class CabaniaView{
     $this->smarty->assign("sesion",$session);
     $this->smarty->display("cabanias.tpl");
   }
-  function mostrarCabania($cabania,$session){
+  function mostrarCabania($cabania,$session,$privilegio){
+    $this->smarty->assign("privilegio",$privilegio);
     $this->smarty->assign("sesion",$session);
     $this->smarty->assign("cabania",$cabania);
     $this->smarty->display("cabaniaComentario.tpl");

@@ -106,6 +106,10 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   case ConfigApp::$ACTION_EDITAR_USUARIO:
   $AdminController->editarUsuario();
   break;
+
+  case ConfigApp::$ACTION_ELIMINAR_IMAGEN:
+  $CabaniaController->eliminarImagen();
+  break;
 }
 
 ?>

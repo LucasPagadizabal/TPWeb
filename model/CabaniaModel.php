@@ -92,8 +92,12 @@ class CabaniaModel{
       foreach ($cabaniasPorCategoria as $key => $cabania) {
           $cabaniasPorCategoria[$key]['imagenes']=$this->getImagenes($cabania['id_cabania']);
       }
-
       return($cabaniasPorCategoria);
+  }
+
+  function eliminarImagen($id_imagen){
+    $sentencia = $this->db->prepare("delete from imagen where id_imagen=?");
+    $sentencia->execute(array($id_imagen));
   }
 }
 ?>

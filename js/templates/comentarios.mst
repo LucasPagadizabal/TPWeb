@@ -6,8 +6,8 @@
       <div class="col-md-3">
          Puntaje : {{puntaje}}
       </div>
+        <a class="eliminarComentario col-md-2" id_comentario="{{id_comentario}}" id_cabania="{{id_cabania}}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
 
-      <a class="eliminarComentario col-md-2" id_comentario="{{id_comentario}}" id_cabania="{{id_cabania}}"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
   </div>
 {{/paquete}}
 </div>
