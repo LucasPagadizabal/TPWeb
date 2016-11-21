@@ -29,7 +29,7 @@ class ComentarioApi extends Api
         break;
 
         case 'POST':
-            if(count($argumentos)==0){
+            if((count($argumentos)==0) && ($_POST["admin"])){
                 $error['Error'] = "El comentario no se creo";
                 $id_comentario = $this->model->crearComentario($_POST["texto"],$_POST["puntaje"],$_POST["id_cabania"]);
               }
@@ -37,7 +37,7 @@ class ComentarioApi extends Api
 
           break;
       default:
-        "Only GET";
+        "Metodo no valido";
         break;
     }
 

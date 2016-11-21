@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instalación de la base de datos</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/master.css">
 </head>
 <body class="blank  pace-done">
 <div class="wrapper">
@@ -54,9 +54,6 @@
 
 </div>
 
-<script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="js/ajax.js"></script>
 
 
 </body>

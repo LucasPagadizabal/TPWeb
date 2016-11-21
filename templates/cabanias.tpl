@@ -12,7 +12,7 @@
 {/if}
 
 {foreach from=$cabanias item=cabania}
-<div class="panel ">
+<div class="panel">
   <p>
     <a class="nav-link-cabania api-comen" href="cabania" data-idcabania="{$cabania['id_cabania']}"><h3>Cabaña {$cabania["nombre"]}</h3></a>
     <div class="panel">

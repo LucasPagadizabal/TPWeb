@@ -33,38 +33,49 @@ class AdminController{
 
   }
   function borrarCabania(){
-    $id_cabania = $_GET["id_cabania"];
-    $this->modelCabania->borrarCabania($id_cabania);
-    $this->mostrarListaCabanias();
+    if($this->checkPrivilegio() == 1){
+      if (isset($_GET["id_cabania"])&&($_GET["id_cabania"]!="")) {
+        $id_cabania = $_GET["id_cabania"];
+        $this->modelCabania->borrarCabania($id_cabania);
+        $this->mostrarListaCabanias();
+      }
+    }
+
   }
   function editarDisponibilidadCabania(){
-    $id_cabania = $_GET["id_cabania"];
-    $this->modelCabania->editarDisponibilidadCabania($id_cabania);
-    $this->mostrarListaCabanias();
+    if($this->checkPrivilegio() == 1){
+      if (isset($_GET["id_cabania"]) &&($_GET["id_cabania"]!="")) {
+        $id_cabania = $_GET["id_cabania"];
+        $this->modelCabania->editarDisponibilidadCabania($id_cabania);
+        $this->mostrarListaCabanias();
+      }
+    }
   }
   function mostrarEditor(){
-    $id_cabania = $_GET["id_cabania"];
-    $cabania = $this->modelCabania->getCabania($id_cabania);
-    $categorias = $this->modelCategoria->getCategorias();
-    $this->view->mostrarEditor($cabania,$categorias);
+    if($this->checkPrivilegio() == 1){
+      if (isset( $_GET["id_cabania"]) && ( $_GET["id_cabania"]!="")) {
+        $id_cabania = $_GET["id_cabania"];
+        $cabania = $this->modelCabania->getCabania($id_cabania);
+        $categorias = $this->modelCategoria->getCategorias();
+        $this->view->mostrarEditor($cabania,$categorias);
+      }
+    }
   }
   function editarCabania(){
-    $estellas = $_POST['categoriaEdit'];
-    $nombre = $_POST['nombreEdit'];
-    $descripcion = $_POST['descripcionEdit'];
-    $id_cabania = $_POST['data-idcabania'];
-
-    if ($estellas!="-1"&&($descripcion!="")&&($nombre!="")) {
-      $this->modelCabania->editCabania($id_cabania, $estellas, $nombre, $descripcion);
+    if($this->checkPrivilegio() == 1){
+      $estellas = $_POST['categoriaEdit'];
+      $nombre = $_POST['nombreEdit'];
+      $descripcion = $_POST['descripcionEdit'];
+      $id_cabania = $_POST['data-idcabania'];
+      if((isset($estellas,$nombre,$descripcion,$id_cabania)) && (($estellas!="-1") && ($descripcion!="") && ($nombre!="")) ){
+        $this->modelCabania->editCabania($id_cabania, $estellas, $nombre, $descripcion);
+      }
+      $this->mostrarListaCabanias();
     }
-    $this->mostrarListaCabanias();
   }
+
   function mostrarListaCabanias(){
-    if(!isset($_SESSION["privilegio"])){
-      $priv=0;
-    }else{
-      $priv = $_SESSION["privilegio"];
-    }
+    $priv = $this->checkPrivilegio();
     $cabanias = $this->modelCabania->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
     $usuarios = $this->modelLogin->getUsers();
@@ -72,11 +83,7 @@ class AdminController{
   }
 
   function showCabanias(){
-    if(!isset($_SESSION["privilegio"])){
-      $priv=0;
-    }else{
-      $priv = $_SESSION["privilegio"];
-    }
+    $priv = $this->checkPrivilegio();
     $cabanias = $this->modelCabania->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
     $usuarios = $this->modelLogin->getUsers();
@@ -84,10 +91,22 @@ class AdminController{
   }
 
   function editarUsuario(){
-    $user = $_POST["nameUser"];
-    $this->modelLogin->editarUsuario($user);
-    $this->mostrarListaCabanias();
+    if($this->checkPrivilegio() == 1){
+      $user = $_POST["nameUser"];
+      $this->modelLogin->editarUsuario($user);
+      $this->mostrarListaCabanias();
+    }  
   }
+
+  function checkPrivilegio(){
+    if(!isset($_SESSION["privilegio"])){
+      $priv=0;
+    }else{
+      $priv = $_SESSION["privilegio"];
+    }
+    return $priv;
+  }
+
 
 }
 

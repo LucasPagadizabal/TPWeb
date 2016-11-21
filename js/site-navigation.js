@@ -8,7 +8,7 @@ $(document).ready(function(){
     });
   });
 
-  $(".nav-Element-Action").click (function(){
+  $(".nav-Element-Action").click (function(event){
     event.preventDefault();
     $.get("index.php?action=" + $(this).attr("href"), function(data) {
       $('body').html(data);
@@ -17,7 +17,7 @@ $(document).ready(function(){
 
   function initDynamicEventHandlers() {
 
-    $(document).on("click",".nav-link",function(){
+    $(".nav-link").on("click",function(event){
       event.preventDefault();
       var dir = $(this).attr("href");
       $.get("index.php?action="+dir, function(data) {
@@ -26,7 +26,7 @@ $(document).ready(function(){
       });
     });
 
-    $(".ajaxForm").submit(function(){
+    $(".ajaxForm").submit(function(event){
       event.preventDefault();
       formData = new FormData(this);
       var dir = $(this).attr("href");
@@ -44,7 +44,7 @@ $(document).ready(function(){
       });
     });
 
-    $(document).on("click",".nav-link-categoria",function(){
+    $(".nav-link-categoria").on("click",function(event){
       event.preventDefault();
       var dir = $(this).attr("href");
       $.get("index.php?action="+dir,{id_categoria : $(this).attr("data-id-categoria"),estrella : $(this).attr("data")}, function(data) {
@@ -53,7 +53,7 @@ $(document).ready(function(){
       });
     });
 
-    $(document).on("click",".nav-link-cabania",function (){
+    $(".nav-link-cabania").on("click",function (event){
       event.preventDefault();
       var dir = $(this).attr("href");
       var id = $(this).attr("data-idcabania");
@@ -64,6 +64,21 @@ $(document).ready(function(){
       });
     });
 
+    $(".crearComentario").submit(function(ev){//creacion de comentarios con api
+      ev.preventDefault();
+      $.ajax({
+        url : 'api/comentarios',
+        data : {texto:$(".text-api").val(),puntaje:$(".puntaje-api").val(),id_cabania:$(".id_cabania-api").val(),admin:true},
+        type : 'POST',
+        dataType : 'json',
+        success : function() {
+            $(".text-api").val("");
+          //  setTimeout(function(){comentariosAjax($(".id_cabania-api").val());},2000);
+            comentariosAjax($(".id_cabania-api").val());
+        }
+    });
+
+  });
 
   }//cierre de super funcion
 
@@ -71,31 +86,13 @@ $(document).ready(function(){
     e.preventDefault();
     var dir = $(this).attr("href");
     console.log($(this).attr("id-imagen"));
-    $.post("index.php?action="+dir,{id_imagen: $(this).attr("id-imagen")},function(data) {
+    $.post("index.php?action="+dir,{id_imagen: $(this).attr("id-imagen"), id_cabania : $(this).attr("id-cabania")},function(data) {
       $('#articulo').html(data);
     })
 
   })
 
 
-
-  $(document).on("submit",".crearComentario",function(e){//creacion de comentarios con api
-    console.log("entro");
-    e.preventDefault();
-    $.ajax({
-      url : 'api/comentarios',
-      data : {texto:$(".text-api").val(),puntaje:$(".puntaje-api").val(),id_cabania:$(".id_cabania-api").val()},
-      type : 'POST',
-      dataType : 'json',
-      success : function() {
-        console.log("Asfas");
-        setTimeout(function(){comentariosAjax($('.id_cabania-api').val());},2000);
-        //comentariosAjax($(".id_cabania-api").val());
-
-      }
-  });
-
-  })
 
   $(document).on("click",".eliminarComentario",function() {//eliminacion de comentarios con api
     var priv = $(".privilegio").val();
@@ -114,6 +111,7 @@ $(document).ready(function(){
 })
 //cargado de comentarios de la api
   function comentariosAjax(id_cabania) {
+    console.log("hola");
     $.ajax(
       {
         method:"GET",

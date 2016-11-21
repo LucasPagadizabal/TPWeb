@@ -19,11 +19,7 @@ class CabaniaController{
   }
 
   function showCabania(){
-    if(!isset($_SESSION["privilegio"])){
-      $priv=0;
-    }else{
-      $priv = $_SESSION["privilegio"];
-    }
+    $priv = $this->checkPrivilegio();
     $id_cabania = $_GET["id_cabania"];
     $cabania = $this->model->getCabania($id_cabania);
     $session = $this->checkSession();
@@ -44,10 +40,26 @@ class CabaniaController{
     }
   }
 
+  function checkPrivilegio(){
+    if(!isset($_SESSION["privilegio"])){
+      $priv=0;
+    }else{
+      $priv = $_SESSION["privilegio"];
+    }
+    return $priv;
+  }
+
   function eliminarImagen(){
+    $priv = $this->checkPrivilegio();
     $id_imagen = $_POST["id_imagen"];
-    $this->model->eliminarImagen($id_imagen);
-    $this->mostrarListaCabanias();
+    $id_cabania = $_POST["id_cabania"];
+    if (isset($id_imagen,$id_cabania)) {
+      $this->model->eliminarImagen($id_imagen);
+      $cabania = $this->model->getCabania($id_cabania);
+      $session = $this->checkSession();
+      $this->view->mostrarCabania($cabania,$session,$priv);
+    }
+
     }
 
 }

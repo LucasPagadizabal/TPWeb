@@ -67,6 +67,8 @@ class CabaniaModel{
   function borrarCabania($id_cabania){
     $sentencia = $this->db->prepare("delete from cabania where id_cabania=?");
     $sentencia->execute(array($id_cabania));
+    $sentencia = $this->db->prepare("delete from imagen where fk_id_cabania=?");
+    $sentencia->execute(array($id_cabania));
   }
 
   function editarDisponibilidadCabania($id_cabania){

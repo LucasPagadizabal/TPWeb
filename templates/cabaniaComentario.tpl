@@ -12,7 +12,7 @@
         {if $imagen@index eq 0}
         <li data-target="#myCarousel" data-slide-to="{$imagen@index}" class="active"></li>
           {if $privilegio}
-            <a class="eliminarImagen" id-imagen="{$imagen['id_imagen']}" href="eliminarImagen">Eliminar Imagen</a>
+            <a class="eliminarImagen" id-imagen="{$imagen['id_imagen']}" id-cabania= "{$cabania['id_cabania']}" href="eliminarImagen">Eliminar Imagen</a>
           {/if}
         {else}
         <li data-target="#myCarousel" data-slide-to="{$imagen@index}"></li>
@@ -63,7 +63,7 @@
       <input class="privilegio" type="hidden" name="privilegio" value="{$privilegio}">
       <input maxlength=60 class="text-api" type="text" name="texto" placeholder="Comentario...">
       <input class="id_cabania-api" type="hidden" name="id_cabania" value="{$cabania['id_cabania']}">
-      <button class="" type="submit" name="button">Comentar</button>
+      <button class="btn btn-success" type="submit" name="button">Comentar</button>
     </form>
   </div>
 {/if}

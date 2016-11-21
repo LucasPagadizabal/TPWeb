@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-11 02:20:56
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-21 18:26:56
          compiled from ".\templates\instalar.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1518258251cf89fa036-31572592%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c06681a8843a9843c31b80e5e2e3313581a77491' => 
     array (
       0 => '.\\templates\\instalar.tpl',
-      1 => 1478827165,
+      1 => 1479749214,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
   'unifunc' => 'content_58251cf8ca4458_63524835',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58251cf8ca4458_63524835')) {function content_58251cf8ca4458_63524835($_smarty_tpl) {?><html><head>
     <meta charset="utf-8">
@@ -25,7 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instalación de la base de datos</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/master.css">
 </head>
 <body class="blank  pace-done">
 <div class="wrapper">
@@ -75,9 +75,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 </div>
 
-<script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="js/ajax.js"></script>
 
 
 </body>
