@@ -59,6 +59,7 @@ $(document).ready(function(){
       var id = $(this).attr("data-idcabania");
       $.get("index.php?action="+dir,{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
         $('#articulo').html(data);
+        setInterval(function() {comentariosAjax(id)}, 2000);
         comentariosAjax(id);
         initDynamicEventHandlers();
       });
@@ -73,8 +74,8 @@ $(document).ready(function(){
         dataType : 'json',
         success : function() {
             $(".text-api").val("");
-          //  setTimeout(function(){comentariosAjax($(".id_cabania-api").val());},2000);
             comentariosAjax($(".id_cabania-api").val());
+            setInterval(function() {comentariosAjax($(".id_cabania-api").val())}, 2000);
         }
     });
 

@@ -30,8 +30,10 @@ class ComentarioApi extends Api
 
         case 'POST':
             if((count($argumentos)==0) && ($_POST["admin"])){
+              if (isset($_POST["texto"]) && ($_POST["texto"] != "")) {
                 $error['Error'] = "El comentario no se creo";
                 $id_comentario = $this->model->crearComentario($_POST["texto"],$_POST["puntaje"],$_POST["id_cabania"]);
+                }
               }
               return ($id_comentario > 0) ? $this->model->getComentario($id_comentario) : $error;
 

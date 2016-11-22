@@ -55,7 +55,7 @@ class CategoriaController{
       if(isset($id_categoria,$valorInput) && (($id_categoria!="")&& ($valorInput!="")) ){
         $this->modelCategoria->editarCategoria($id_categoria,$valorInput);
         $this->controllerAdmin->mostrarListaCabanias();
-      }  
+      }
     }
   }
 
