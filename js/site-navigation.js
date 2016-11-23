@@ -4,7 +4,8 @@ $(document).ready(function(){
   $(".nav-Element").click(function(event){
     event.preventDefault();
     $.get($(this).attr("href"), function(data) {
-      $("#articulo").html(data)
+      $("#articulo").html(data);
+      pararTemporizador();
     });
   });
 
@@ -12,6 +13,7 @@ $(document).ready(function(){
     event.preventDefault();
     $.get("index.php?action=" + $(this).attr("href"), function(data) {
       $('body').html(data);
+      pararTemporizador();
     });
   });
 
@@ -23,13 +25,14 @@ $(document).ready(function(){
 
   function initDynamicEventHandlers() {
 
-    pararTemporizador();
+    //pararTemporizador();
 
     $(".nav-link").on("click",function(event){
       event.preventDefault();
       var dir = $(this).attr("href");
       $.get("index.php?action="+dir, function(data) {
         $('#articulo').html(data);
+        pararTemporizador();
         initDynamicEventHandlers();
       });
     });
@@ -69,8 +72,8 @@ $(document).ready(function(){
       var id = $(this).attr("data-idcabania");
       $.get("index.php?action="+dir,{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
         $('#articulo').html(data);
-        temporizador = setInterval(function() {comentariosAjax(id)}, 2000);
         comentariosAjax(id);
+        temporizador = setInterval(function() {comentariosAjax(id)}, 2000);
         initDynamicEventHandlers();
       });
     });
@@ -115,6 +118,7 @@ $(document).ready(function(){
   })
 //cargado de comentarios de la api
   function comentariosAjax(id_cabania) {
+    console.log("entro");
     $.ajax(
       {
         method:"GET",

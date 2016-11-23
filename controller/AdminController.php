@@ -20,6 +20,10 @@ class AdminController{
 
   }
 
+  function checkBBDD(){
+    return $this->modelCabania->checkBBDD();
+  }
+
   function crearCabania(){
 
     $nombre = $_POST['nombre'];

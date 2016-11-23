@@ -15,7 +15,13 @@ $LoginController = new LoginController();
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
   // Home del sitio
-  $CabaniaController->iniciar();
+  if ($AdminController->checkBBDD()) {//chequeo si hay datos en la bbdd
+    $CabaniaController->iniciar();
+  }else {
+    header("Location: db");
+  }
+  //$CabaniaController->iniciar();
+  $AdminController->checkBBDD();
   die();
 }
 switch($_REQUEST[ConfigApp::$ACTION]){

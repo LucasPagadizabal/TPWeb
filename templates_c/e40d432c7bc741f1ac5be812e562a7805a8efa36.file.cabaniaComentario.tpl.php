@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 17:31:09
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 18:22:59
          compiled from ".\templates\cabaniaComentario.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:97655835c44d1de510-35504048%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:214915835d073abb5a8-28770092%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e40d432c7bc741f1ac5be812e562a7805a8efa36' => 
     array (
       0 => '.\\templates\\cabaniaComentario.tpl',
-      1 => 1479910810,
+      1 => 1479901420,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '97655835c44d1de510-35504048',
+  'nocache_hash' => '214915835d073abb5a8-28770092',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5835c44d27fbb8_09690496',
+  'unifunc' => 'content_5835d073c10303_91842932',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5835c44d27fbb8_09690496')) {function content_5835c44d27fbb8_09690496($_smarty_tpl) {?><div class="panel">
+<?php if ($_valid && !is_callable('content_5835d073c10303_91842932')) {function content_5835d073c10303_91842932($_smarty_tpl) {?><div class="panel">
   <h1>Cabaña <?php echo $_smarty_tpl->tpl_vars['cabania']->value["nombre"];?>
  <span id="cantidadEstrellas"><?php echo $_smarty_tpl->tpl_vars['cabania']->value["estrella"];?>
 </span> </h1>

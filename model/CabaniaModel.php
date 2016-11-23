@@ -105,5 +105,10 @@ class CabaniaModel{
     $sentencia = $this->db->prepare("delete from imagen where id_imagen=?");
     $sentencia->execute(array($id_imagen));
   }
+
+  function checkBBDD(){
+    $sentencia = $this->db->prepare("select count(*) from cabania");
+    return $sentencia->execute();
+  }
 }
 ?>
