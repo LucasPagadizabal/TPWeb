@@ -14,7 +14,7 @@ class LoginController{
   }
 
   function mostrarPantallaLogin(){
-    $this->view->mostrarForm("");
+    $this->view->mostrarForm("","");
   }
 
   function crearUsuario(){
@@ -27,11 +27,16 @@ class LoginController{
           $pass = md5($pass);
           $this->model->crearUsuario($user,$pass);
           $msj = "El usuario se creo correctamente!";
+          $tipoMsj = "ok";
         }else{
           $msj = "El usuario ya existe!";
+          $tipoMsj = "error";
         }
+    }else{
+      $tipoMsj = "error";
+
     }
-    $this->view->mostrarForm($msj);
+    $this->view->mostrarForm($msj, $tipoMsj);
   }
 
   function login(){
@@ -47,13 +52,15 @@ class LoginController{
           session_start();
           $_SESSION['privilegio'] = $usuario["privilegio"];
           //header("Location: index.php?action=home");
-          $this->view->mostrarForm($msj);
+          $tipoMsj = "ok";
+          $this->view->mostrarForm($msj, $tipoMsj);
           die();
     }
 
     }
+    $tipoMsj = 'error';
     $msj="No se pudo ingresar, error de Usuario y/o Clave";
-    $this->view->mostrarForm($msj);
+    $this->view->mostrarForm($msj, $tipoMsj);
 
 
   }

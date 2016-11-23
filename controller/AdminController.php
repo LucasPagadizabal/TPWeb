@@ -1,10 +1,11 @@
 <?php
-require_once ('model/CabaniaModel.php');
-require_once ('model/CategoriaModel.php');
-require_once ('model/LoginModel.php');
-require_once ('view/AdminView.php');
+include_once (dirname(__DIR__).'/model/CabaniaModel.php');
+include_once (dirname(__DIR__).'/model/CategoriaModel.php');
+include_once (dirname(__DIR__).'/model/LoginModel.php');
+include_once (dirname(__DIR__).'/view/AdminView.php');
 session_start();
 class AdminController{
+
 
   protected $modelCategoria;
   protected $modelCabania;
@@ -82,6 +83,15 @@ class AdminController{
     $this->view->mostrarListaCabanias($cabanias, $categorias,$priv,$usuarios);
   }
 
+  function agregarImgCabExistente(){
+    $imagenes = $_FILES["imagenes"];
+    $id_cabania = $_POST['id_cab'];
+    if (isset($imagenes)) {
+      $this->modelCabania->agregarImgCabExistente($id_cabania,$imagenes);
+    }
+    $this->showCabanias();
+  }
+
   function showCabanias(){
     $priv = $this->checkPrivilegio();
     $cabanias = $this->modelCabania->getCabanias();
@@ -95,7 +105,7 @@ class AdminController{
       $user = $_POST["nameUser"];
       $this->modelLogin->editarUsuario($user);
       $this->mostrarListaCabanias();
-    }  
+    }
   }
 
   function checkPrivilegio(){

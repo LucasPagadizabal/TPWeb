@@ -1,29 +1,57 @@
-<div class="panel">
-  <div class="panel container">
+
+<!-- <div class="panel"> -->
+  <div class="conteiner panel">
+    <div class="row">
+
   <form class="form-signin ajaxForm" href="index.php?action=login" method="post">
-      <h3 class="form-signin-heading">Log In</h3>
+
+      <div class="form-group col-xs-4">
+
       <input class="form-control" type="email" name="email" value="" placeholder="Email">
+    </div>
+      <div class="form-group col-xs-4">
+
       <input class="form-control" type="password" name="pass" value="" placeholder="Contraseña">
-      <button class="btn btn-lg btn-primary btn-block" type="submit" name="button">Log In</button>
+    </div>
+    <div class="form-group col-xs-2">
+
+      <button class="btn btn-lg btn-primary" type="submit" name="button">Log In</button>
+    </div>
   </form>
 
 </div>
+</div>
+<!-- </div> -->
 
-<div class="panel">
-  <div class="panel">
+{if $msj!=""}
+  {if $tipoMsj == 'ok'}
+  <div class="panel alerta-success">
     {$msj}
   </div>
-</div>
+  {else}
+  <div class="panel alerta-danger">
+    {$msj}
+  </div>
+  {/if}
+  {/if}
+  <div class="conteiner panel">
 
-    <div class="panel container">
+    <div class="row">
       <form class="form-signin ajaxForm" href="index.php?action=crearUsuario" method="post">
-        <h3 class="form-signin-heading">Crear cuenta</h3>
+        <div class="form-group col-xs-4">
+
         <input class="form-control" type="email" name="user" value="" placeholder="E-mail">
+      </div>
+      <div class="form-group col-xs-4">
+
         <input class="form-control" type="password" name="pass" value="" placeholder="Contraseña">
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="button">Crear</button>
+      </div>
+      <div class="form-group col-xs-2">
+
+        <button class="btn btn-lg btn-primary" type="submit" name="button">Crear Usuario</button>
+      </div>
       </form>
 
 
     </div>
-
 </div>

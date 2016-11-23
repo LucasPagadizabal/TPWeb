@@ -1,6 +1,6 @@
 <?php
 
-require_once ('model/CabaniaModel.php');
+include_once (dirname(__DIR__).'/model/CabaniaModel.php');
 
 class CategoriaModel{
 

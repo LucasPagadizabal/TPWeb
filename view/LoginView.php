@@ -10,8 +10,9 @@ class LoginView
     $this->smarty = new Smarty();
   }
 
-  function mostrarForm($msj){
+  function mostrarForm($msj, $tipoMsj){
     $this->smarty->assign('msj', $msj);
+    $this->smarty->assign('tipoMsj', $tipoMsj);
     $this->smarty->display('login.tpl');
   }
 }

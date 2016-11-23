@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-21 15:28:42
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 05:42:26
          compiled from ".\templates\cabaniaComentario.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:62655824712a87e764-17545950%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:54725834c3236523f0-54650119%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e40d432c7bc741f1ac5be812e562a7805a8efa36' => 
     array (
       0 => '.\\templates\\cabaniaComentario.tpl',
-      1 => 1479738509,
+      1 => 1479875895,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '62655824712a87e764-17545950',
+  'nocache_hash' => '54725834c3236523f0-54650119',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5824712a986e08_38509758',
+  'unifunc' => 'content_5834c323706551_31747285',
   'variables' => 
   array (
     'cabania' => 0,
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5824712a986e08_38509758')) {function content_5824712a986e08_38509758($_smarty_tpl) {?><div class="panel">
+<?php if ($_valid && !is_callable('content_5834c323706551_31747285')) {function content_5834c323706551_31747285($_smarty_tpl) {?><div class="panel">
   <h1>Cabaña <?php echo $_smarty_tpl->tpl_vars['cabania']->value["nombre"];?>
  <span id="cantidadEstrellas"><?php echo $_smarty_tpl->tpl_vars['cabania']->value["estrella"];?>
 </span> </h1>
@@ -35,8 +35,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
   </p>
   <div class="container">
+    <input id="inputPrivilegio" type="hidden" name="name" value="<?php echo $_smarty_tpl->tpl_vars['privilegio']->value;?>
+">
     <br>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-privilegio="<?php echo $_smarty_tpl->tpl_vars['privilegio']->value;?>
+" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <?php  $_smarty_tpl->tpl_vars['imagen'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['imagen']->_loop = false;
@@ -49,11 +52,6 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
         <?php if ($_smarty_tpl->tpl_vars['imagen']->index==0){?>
         <li data-target="#myCarousel" data-slide-to="<?php echo $_smarty_tpl->tpl_vars['imagen']->index;?>
 " class="active"></li>
-          <?php if ($_smarty_tpl->tpl_vars['privilegio']->value){?>
-            <a class="eliminarImagen" id-imagen="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_imagen'];?>
-" id-cabania= "<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
-" href="eliminarImagen">Eliminar Imagen</a>
-          <?php }?>
         <?php }else{ ?>
         <li data-target="#myCarousel" data-slide-to="<?php echo $_smarty_tpl->tpl_vars['imagen']->index;?>
 "></li>
@@ -94,29 +92,83 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
         </a>
       </div>
     </div>
+  </div>
+  <?php if ($_smarty_tpl->tpl_vars['privilegio']->value==1){?>
+  <div class="panel">
+
+  <?php  $_smarty_tpl->tpl_vars['imagen'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['imagen']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['cabania']->value['imagenes']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['imagen']->index=-1;
+foreach ($_from as $_smarty_tpl->tpl_vars['imagen']->key => $_smarty_tpl->tpl_vars['imagen']->value){
+$_smarty_tpl->tpl_vars['imagen']->_loop = true;
+ $_smarty_tpl->tpl_vars['imagen']->index++;
+?>
+
+  <div class="panel texto">
+
+  <img class="imgDelete" src="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['path'];?>
+" alt="" />
+    <!-- <div class="form-group"> -->
+        <button class="eliminarImagen btn btn-danger btnEliminarCab" id-imagen="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_imagen'];?>
+" id-cabania= "<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
+" href="eliminarImagen">Eliminar</button>
+
+  <!-- </div> -->
+  </div>
+  <?php } ?>
 </div>
+<div class="panel">
+  <p>Agregar nuevas imagenes a esta cabaña</p>
+  <form class="conteiner panel ajaxForm" href="index.php?action=agregarImgCabExistente" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id_cab" value="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
+">
+    <div class="row">
+
+      <div class="form-group col-xs-4"> <input class="form-control" type="file" name="imagenes[]" required value="" multiple></div>
+    </div>
+    <div class="form-group"><button class="btn btn-primary" type="submit" name="button">Enviar</button></div>
+  </form>
+</div>
+  <?php }?>
   <div class="panel">
     <h2>Comentarios</h2>
-      <div class="container panel" id="div-com">
+    <div class="container panel" id="div-com">
 
-      </div>
+    </div>
     <?php if ($_smarty_tpl->tpl_vars['sesion']->value){?>
-    <form class="form-inline crearComentario" href="api/comentarios" method="post">
-      <select class="puntaje-api" name="puntaje">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <input class="privilegio" type="hidden" name="privilegio" value="<?php echo $_smarty_tpl->tpl_vars['privilegio']->value;?>
+    <div class="panel">
+
+      <form class="crearComentario" href="api/comentarios" method="post">
+        <input class="privilegio" type="hidden" name="privilegio" value="<?php echo $_smarty_tpl->tpl_vars['privilegio']->value;?>
 ">
-      <input maxlength=60 class="text-api" type="text" name="texto" placeholder="Comentario...">
-      <input class="id_cabania-api" type="hidden" name="id_cabania" value="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
+        <input class="id_cabania-api" type="hidden" name="id_cabania" value="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
 ">
-      <button class="btn btn-success" type="submit" name="button">Comentar</button>
-    </form>
+        <div class="row">
+          <div class="form-group col-xs-4">
+            <input maxlength=60 class="text-api form-control" type="text" name="texto" placeholder="Deje aqui su comentario...">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-xs-1">
+            <label>Puntaje</label>
+
+            <select class="puntaje-api form-control" name="puntaje">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit" name="button">Enviar</button>
+        </div>
+      </form>
+    </div>
+    <?php }?>
   </div>
-<?php }?>
-<script src="js/estrellas.js" charset="utf-8"></script>
+  <script src="js/estrellas.js" charset="utf-8"></script>
 <?php }} ?>

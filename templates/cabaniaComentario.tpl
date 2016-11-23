@@ -4,16 +4,14 @@
     {$cabania["comentarios"]}
   </p>
   <div class="container">
+    <input id="inputPrivilegio" type="hidden" name="name" value="{$privilegio}">
     <br>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-privilegio="{$privilegio}" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         {foreach $cabania['imagenes'] as $imagen}
         {if $imagen@index eq 0}
         <li data-target="#myCarousel" data-slide-to="{$imagen@index}" class="active"></li>
-          {if $privilegio}
-            <a class="eliminarImagen" id-imagen="{$imagen['id_imagen']}" id-cabania= "{$cabania['id_cabania']}" href="eliminarImagen">Eliminar Imagen</a>
-          {/if}
         {else}
         <li data-target="#myCarousel" data-slide-to="{$imagen@index}"></li>
 
@@ -45,26 +43,70 @@
         </a>
       </div>
     </div>
+  </div>
+  {if $privilegio == 1}
+  <div class="panel">
+
+  {foreach $cabania['imagenes'] as $imagen}
+
+  <div class="panel texto">
+
+  <img class="imgDelete" src="{$imagen['path']}" alt="" />
+    <!-- <div class="form-group"> -->
+        <button class="eliminarImagen btn btn-danger btnEliminarCab" id-imagen="{$imagen['id_imagen']}" id-cabania= "{$cabania['id_cabania']}" href="eliminarImagen">Eliminar</button>
+
+  <!-- </div> -->
+  </div>
+  {/foreach}
 </div>
+<div class="panel">
+  <p>Agregar nuevas imagenes a esta cabaña</p>
+  <form class="conteiner panel ajaxForm" href="index.php?action=agregarImgCabExistente" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id_cab" value="{$cabania['id_cabania']}">
+    <div class="row">
+
+      <div class="form-group col-xs-4"> <input class="form-control" type="file" name="imagenes[]" required value="" multiple></div>
+    </div>
+    <div class="form-group"><button class="btn btn-primary" type="submit" name="button">Enviar</button></div>
+  </form>
+</div>
+  {/if}
   <div class="panel">
     <h2>Comentarios</h2>
-      <div class="container panel" id="div-com">
+    <div class="container panel" id="div-com">
 
-      </div>
+    </div>
     {if $sesion}
-    <form class="form-inline crearComentario" href="api/comentarios" method="post">
-      <select class="puntaje-api" name="puntaje">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <input class="privilegio" type="hidden" name="privilegio" value="{$privilegio}">
-      <input maxlength=60 class="text-api" type="text" name="texto" placeholder="Comentario...">
-      <input class="id_cabania-api" type="hidden" name="id_cabania" value="{$cabania['id_cabania']}">
-      <button class="btn btn-success" type="submit" name="button">Comentar</button>
-    </form>
+    <div class="panel">
+
+      <form class="crearComentario" href="api/comentarios" method="post">
+        <input class="privilegio" type="hidden" name="privilegio" value="{$privilegio}">
+        <input class="id_cabania-api" type="hidden" name="id_cabania" value="{$cabania['id_cabania']}">
+        <div class="row">
+          <div class="form-group col-xs-4">
+            <input maxlength=60 class="text-api form-control" type="text" name="texto" placeholder="Deje aqui su comentario...">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-xs-1">
+            <label>Puntaje</label>
+
+            <select class="puntaje-api form-control" name="puntaje">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit" name="button">Enviar</button>
+        </div>
+      </form>
+    </div>
+    {/if}
   </div>
-{/if}
-<script src="js/estrellas.js" charset="utf-8"></script>
+  <script src="js/estrellas.js" charset="utf-8"></script>

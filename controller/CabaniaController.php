@@ -10,12 +10,14 @@ class CabaniaController{
   function __construct(){
     $this->model = new CabaniaModel();
     $this->view = new CabaniaView();
+
   }
 
   function iniciar(){
+    $priv = $this->checkPrivilegio();
     $cabanias = $this->model->getCabanias();
     $session = $this->checkSession();
-    $this->view->iniciarView($cabanias,$session);
+    $this->view->iniciarView($cabanias,$session,$priv);
   }
 
   function showCabania(){
@@ -24,6 +26,7 @@ class CabaniaController{
     $cabania = $this->model->getCabania($id_cabania);
     $session = $this->checkSession();
     $this->view->mostrarCabania($cabania,$session,$priv);
+
   }
 
   function mostrarListaCabanias(){

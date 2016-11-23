@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-11 02:37:25
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-22 23:13:53
          compiled from ".\templates\cabaniasEdiciones.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:37115824032356c036-62123288%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:136675834c321a111c7-21274193%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '683d637e0feadb699ca72714f87d1495d44ed60d' => 
     array (
       0 => '.\\templates\\cabaniasEdiciones.tpl',
-      1 => 1478828241,
+      1 => 1479851877,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '37115824032356c036-62123288',
+  'nocache_hash' => '136675834c321a111c7-21274193',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_582403236afe35_32207294',
   'variables' => 
   array (
     'privilegio' => 0,
@@ -28,8 +26,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cabania' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5834c321aac072_68426571',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_582403236afe35_32207294')) {function content_582403236afe35_32207294($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5834c321aac072_68426571')) {function content_5834c321aac072_68426571($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\projects\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><?php if ($_smarty_tpl->tpl_vars['privilegio']->value==1){?>
 <div class="coteiner panel">
   <h1>Crear nueva cabaña</h1>

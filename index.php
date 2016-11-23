@@ -60,6 +60,10 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   $AdminController->showCabanias();
   break;
 
+  case ConfigApp::$ACTION_AGREGAR_IMG_CAB_EXISTENTE:
+  $AdminController->agregarImgCabExistente();
+  break;
+
 
   // ACTIONS DE CATEGORIA
 

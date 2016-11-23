@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-11 03:04:02
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-22 23:14:04
          compiled from ".\templates\cabaniaEdicion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:196495825271232dcf2-16718636%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:25855834c32c67f802-09188959%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b2826ab2f7cdbbcdfa48d755938a837fdddd2c4a' => 
     array (
       0 => '.\\templates\\cabaniaEdicion.tpl',
-      1 => 1478782719,
+      1 => 1477575823,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '196495825271232dcf2-16718636',
+  'nocache_hash' => '25855834c32c67f802-09188959',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_58252712610586_27989645',
+  'unifunc' => 'content_5834c32c72ad60_16534246',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58252712610586_27989645')) {function content_58252712610586_27989645($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5834c32c72ad60_16534246')) {function content_5834c32c72ad60_16534246($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\projects\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><?php if (isset($_smarty_tpl->tpl_vars['cabania']->value)){?>
 <div class="panel">
   <p>

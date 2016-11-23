@@ -53,6 +53,10 @@ form{
 h1, h2, h3, h4{
   text-align: center;
 }
+.imgDelete{
+  width: 10%;
+  height: 10%;
+}
 .panel{
   padding: 1%;
   margin: 2%;

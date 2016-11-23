@@ -2,12 +2,22 @@
 {if isset($cabanias)}
 
 {if !$sesion}
+
 <div class="conteiner">
-  <a class="nav-link" href="mostrarLogin">Log in</a>
+  <div class="panel texto">
+    <button class="nav-link btn btn-primary" href="mostrarLogin">LOG IN</button>
+  </div>
 </div>
 {else}
 <div class="conteiner">
-  <a class="nav-link" href="cerrarSesion">Cerrar Sesion</a>
+  <div class="panel texto">
+    <button class="nav-link btn btn-primary" href="cerrarSesion">LOG OUT</button>
+      {if $priv == 1}
+      <div class="panel alerta-danger">
+        Administrador
+     </div>
+      {/if}
+  </div>
 </div>
 {/if}
 

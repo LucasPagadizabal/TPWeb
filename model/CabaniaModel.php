@@ -54,8 +54,16 @@ class CabaniaModel{
     $insertImagen->execute(array($path,$id_cabania));
   }
 }
+  function agregarImgCabExistente($id_cabania,$imagenes){
+    $max = sizeof($imagenes["name"]);
 
-
+    for ($i=0; $i < $max; $i++) {
+    $path="images/".uniqid()."_".$imagenes["name"][$i];
+    move_uploaded_file($imagenes["tmp_name"][$i], $path);
+    $insertImagen = $this->db->prepare("INSERT INTO imagen(path,fk_id_cabania) VALUES(?,?)");
+    $insertImagen->execute(array($path,$id_cabania));
+  }
+}
   function getTipoCat($id_categoria) {
     $sentencia = $this->db->prepare("select estrella from categoria where id_categoria = ?");
     $sentencia->execute(array($id_categoria));

@@ -9,9 +9,10 @@ class CabaniaView{
     $this->smarty = new Smarty();
   }
 
-  function iniciarView($cabanias,$session){
+  function iniciarView($cabanias,$session,$priv){
     $this->smarty->assign("cabanias",$cabanias);
     $this->smarty->assign("sesion",$session);
+    $this->smarty->assign("priv",$priv);
     $this->smarty->display("body.tpl");
   }
   function mostrarListaCabanias($cabanias,$session){

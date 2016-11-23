@@ -15,7 +15,15 @@ $(document).ready(function(){
     });
   });
 
+  var temporizador;
+
+  function pararTemporizador() {
+    clearInterval(temporizador);
+  }
+
   function initDynamicEventHandlers() {
+
+    pararTemporizador();
 
     $(".nav-link").on("click",function(event){
       event.preventDefault();
@@ -59,29 +67,31 @@ $(document).ready(function(){
       var id = $(this).attr("data-idcabania");
       $.get("index.php?action="+dir,{ id_cabania: $(this).attr("data-idcabania") }, function(data) {
         $('#articulo').html(data);
-        setInterval(function() {comentariosAjax(id)}, 2000);
+        temporizador = setInterval(function() {comentariosAjax(id)}, 2000);
         comentariosAjax(id);
         initDynamicEventHandlers();
       });
     });
-
     $(".crearComentario").submit(function(ev){//creacion de comentarios con api
       ev.preventDefault();
       $.ajax({
         url : 'api/comentarios',
-        data : {texto:$(".text-api").val(),puntaje:$(".puntaje-api").val(),id_cabania:$(".id_cabania-api").val(),admin:true},
+        data : {texto:$(".text-api").val(),puntaje:$(".puntaje-api").val(),id_cabania:$(".id_cabania-api").val()},
         type : 'POST',
         dataType : 'json',
         success : function() {
             $(".text-api").val("");
             comentariosAjax($(".id_cabania-api").val());
-            setInterval(function() {comentariosAjax($(".id_cabania-api").val())}, 2000);
+            temporizador = setInterval(function() {comentariosAjax($(".id_cabania-api").val())}, 2000);
         }
     });
 
   });
 
+
+
   }//cierre de super funcion
+
 
   $(document).on("click",".eliminarImagen",function(e) {
     e.preventDefault();
@@ -96,8 +106,6 @@ $(document).ready(function(){
 
 
   $(document).on("click",".eliminarComentario",function() {//eliminacion de comentarios con api
-    var priv = $(".privilegio").val();
-    if (priv == 1) {
       var id_cabania = $(this).attr("id_cabania");
       var dir = $(this).attr("id_comentario");
       $.ajax({
@@ -107,12 +115,11 @@ $(document).ready(function(){
             comentariosAjax(id_cabania);
       }
     });
-    }
+  })
 
-})
+
 //cargado de comentarios de la api
   function comentariosAjax(id_cabania) {
-    console.log("hola");
     $.ajax(
       {
         method:"GET",
@@ -120,20 +127,35 @@ $(document).ready(function(){
         url: "api/comentarios/" +id_cabania,//traer id de la cabania que pertenece
         success:function(data) {
           createComentarios(data);
+          iniciarBotonEliminarCometario();
         }
       }
 
     )
   }
+  function iniciarBotonEliminarCometario(){
+    var priv = $("#inputPrivilegio").val();
+    if(priv === "0"){
+      $(".botonEliminarComent").remove();
+    }
+  }
+
   //crear tpl de Mustache
+
+  var templateComentario;
+  $.ajax({ url: 'js/templates/comentarios.mst',
+  success: function(templateReceived) {
+  templateComentario = templateReceived;
+}
+});
+
   function createComentarios(comentarios){
-    $.ajax({ url: 'js/templates/comentarios.mst',
-     success: function(templateReceived) {
-       var rendered = Mustache.render(templateReceived,{paquete:comentarios});
+
+            var rendered = Mustache.render(templateComentario,{paquete:comentarios});
        $("#div-com").html(rendered);
      }
-    });
-  }
+
+
 
 
   function partialRender(dir, functionDestino){

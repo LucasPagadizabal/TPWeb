@@ -1,41 +1,52 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-21 23:15:18
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 03:20:44
          compiled from ".\templates\cabanias.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1992958240320387036-00975185%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:310055834c32058c986-03313001%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a6b742f9443fd2eb7cfb3cd64aa8c2d5e46bcf75' => 
     array (
       0 => '.\\templates\\cabanias.tpl',
-      1 => 1479766490,
+      1 => 1479867643,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1992958240320387036-00975185',
+  'nocache_hash' => '310055834c32058c986-03313001',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_58240320461fb5_95445970',
+  'unifunc' => 'content_5834c3205c0942_04513001',
   'variables' => 
   array (
     'cabanias' => 0,
     'sesion' => 0,
+    'priv' => 0,
     'cabania' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58240320461fb5_95445970')) {function content_58240320461fb5_95445970($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\proyectos\\TPWeb2\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5834c3205c0942_04513001')) {function content_5834c3205c0942_04513001($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\projects\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?>
 <?php if (isset($_smarty_tpl->tpl_vars['cabanias']->value)){?>
 
 <?php if (!$_smarty_tpl->tpl_vars['sesion']->value){?>
+
 <div class="conteiner">
-  <a class="nav-link" href="mostrarLogin">Log in</a>
+  <div class="panel texto">
+    <button class="nav-link btn btn-primary" href="mostrarLogin">LOG IN</button>
+  </div>
 </div>
 <?php }else{ ?>
 <div class="conteiner">
-  <a class="nav-link" href="cerrarSesion">Cerrar Sesion</a>
+  <div class="panel texto">
+    <button class="nav-link btn btn-primary" href="cerrarSesion">LOG OUT</button>
+      <?php if ($_smarty_tpl->tpl_vars['priv']->value==1){?>
+      <div class="panel alerta-danger">
+        Administrador
+     </div>
+      <?php }?>
+  </div>
 </div>
 <?php }?>
 
