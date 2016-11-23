@@ -61,7 +61,7 @@
 </div>
 <div class="panel">
   <p>Agregar nuevas imagenes a esta cabaña</p>
-  <form class="conteiner panel ajaxForm" href="index.php?action=agregarImgCabExistente" method="post" enctype="multipart/form-data">
+  <form class="conteiner panel ajaxForm" data-idcabania="{$cabania['id_cabania']}" href="index.php?action=agregarImgCabExistente" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id_cab" value="{$cabania['id_cabania']}">
     <div class="row">
 

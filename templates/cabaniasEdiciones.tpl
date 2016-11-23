@@ -27,19 +27,32 @@
 <div id="cabaniaCreadaMensaje"></div>
 </div>
 
-<div class="panel">
   <div class="panel">
-    <h4>Editar Usuario</h4>
+
+    <h3>Editar Permisos de Usuario</h3>
+    <div class="panel">
+
     <form class="ajaxForm" href="index.php?action=editarUsuario" method="post">
+      <div class="row">
+      <div class="form-group col-xs-4">
+
       <select name="nameUser" class="form-control"  name="categoria">
         {foreach from=$usuarios item=usuario}
-        <option  value="{$usuario['email']}">{$usuario['email']}</option>
+        <option  value="{$usuario['email']}">{$usuario['email']}
+          {if $usuario['privilegio'] == 1}
+          ---ADMIN---
+          {else}
+          ---USUARIO---
+          {/if}
+        </option>
         {/foreach}
       </select>
-      <button type="submit" name="editUsuario">Editar Usuario</button>
+    </div>
+  </div>
+        <button class="btn btn-primary" type="submit" name="editUsuario">Cambiar permisos a este usuario</button>
     </form>
   </div>
-</div>
+  </div>
 
 {if isset($cabanias)}
 {foreach from=$cabanias item=cabania}

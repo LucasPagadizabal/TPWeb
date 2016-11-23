@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 05:42:26
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 17:31:09
          compiled from ".\templates\cabaniaComentario.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:54725834c3236523f0-54650119%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:97655835c44d1de510-35504048%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e40d432c7bc741f1ac5be812e562a7805a8efa36' => 
     array (
       0 => '.\\templates\\cabaniaComentario.tpl',
-      1 => 1479875895,
+      1 => 1479910810,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '54725834c3236523f0-54650119',
+  'nocache_hash' => '97655835c44d1de510-35504048',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5834c323706551_31747285',
   'variables' => 
   array (
     'cabania' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'sesion' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.14',
+  'unifunc' => 'content_5835c44d27fbb8_09690496',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5834c323706551_31747285')) {function content_5834c323706551_31747285($_smarty_tpl) {?><div class="panel">
+<?php if ($_valid && !is_callable('content_5835c44d27fbb8_09690496')) {function content_5835c44d27fbb8_09690496($_smarty_tpl) {?><div class="panel">
   <h1>Cabaña <?php echo $_smarty_tpl->tpl_vars['cabania']->value["nombre"];?>
  <span id="cantidadEstrellas"><?php echo $_smarty_tpl->tpl_vars['cabania']->value["estrella"];?>
 </span> </h1>
@@ -119,7 +119,8 @@ $_smarty_tpl->tpl_vars['imagen']->_loop = true;
 </div>
 <div class="panel">
   <p>Agregar nuevas imagenes a esta cabaña</p>
-  <form class="conteiner panel ajaxForm" href="index.php?action=agregarImgCabExistente" method="post" enctype="multipart/form-data">
+  <form class="conteiner panel ajaxForm" data-idcabania="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
+" href="index.php?action=agregarImgCabExistente" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id_cab" value="<?php echo $_smarty_tpl->tpl_vars['cabania']->value['id_cabania'];?>
 ">
     <div class="row">

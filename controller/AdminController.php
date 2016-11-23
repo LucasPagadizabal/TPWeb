@@ -83,21 +83,14 @@ class AdminController{
     $this->view->mostrarListaCabanias($cabanias, $categorias,$priv,$usuarios);
   }
 
-  function agregarImgCabExistente(){
-    $imagenes = $_FILES["imagenes"];
-    $id_cabania = $_POST['id_cab'];
-    if (isset($imagenes)) {
-      $this->modelCabania->agregarImgCabExistente($id_cabania,$imagenes);
-    }
-    $this->showCabanias();
-  }
+
 
   function showCabanias(){
     $priv = $this->checkPrivilegio();
     $cabanias = $this->modelCabania->getCabanias();
     $categorias = $this->modelCategoria->getCategorias();
     $usuarios = $this->modelLogin->getUsers();
-    $this->view->iniciarView($cabanias, $categorias,$priv,$usuarios);
+    $this->view->iniciarView($cabanias,$categorias,$priv,$usuarios);
   }
 
   function editarUsuario(){

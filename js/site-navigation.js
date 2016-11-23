@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   $(".nav-Element").click(function(event){
     event.preventDefault();
-    partialRender($(this).attr("href"), function(data) {
+    $.get($(this).attr("href"), function(data) {
       $("#articulo").html(data)
     });
   });
@@ -38,6 +38,7 @@ $(document).ready(function(){
       event.preventDefault();
       formData = new FormData(this);
       var dir = $(this).attr("href");
+      var id = $(this).attr("data-idcabania");
       $.ajax({
         method: "POST",
         url: dir,
@@ -48,8 +49,9 @@ $(document).ready(function(){
         success: function(data){
           $("#articulo").html(data);
           initDynamicEventHandlers();
-        }
-      });
+          comentariosAjax(id); //aca tengo que pedir de vuelta los comentarios a la api
+        }                       //porque cuando cargo una imagen refresca todo el div #articulo
+      });                     // y despues no los tiene mas
     });
 
     $(".nav-link-categoria").on("click",function(event){
@@ -85,25 +87,20 @@ $(document).ready(function(){
             temporizador = setInterval(function() {comentariosAjax($(".id_cabania-api").val())}, 2000);
         }
     });
-
   });
 
-
-
   }//cierre de super funcion
-
 
   $(document).on("click",".eliminarImagen",function(e) {
     e.preventDefault();
     var dir = $(this).attr("href");
-    console.log($(this).attr("id-imagen"));
+    var id = $(this).attr("id-cabania");
     $.post("index.php?action="+dir,{id_imagen: $(this).attr("id-imagen"), id_cabania : $(this).attr("id-cabania")},function(data) {
       $('#articulo').html(data);
+      initDynamicEventHandlers();
+      comentariosAjax(id); //aca tambien traigo de nuevo los comentarios d la api
     })
-
   })
-
-
 
   $(document).on("click",".eliminarComentario",function() {//eliminacion de comentarios con api
       var id_cabania = $(this).attr("id_cabania");
@@ -116,8 +113,6 @@ $(document).ready(function(){
       }
     });
   })
-
-
 //cargado de comentarios de la api
   function comentariosAjax(id_cabania) {
     $.ajax(
@@ -129,9 +124,7 @@ $(document).ready(function(){
           createComentarios(data);
           iniciarBotonEliminarCometario();
         }
-      }
-
-    )
+      })
   }
   function iniciarBotonEliminarCometario(){
     var priv = $("#inputPrivilegio").val();
@@ -150,25 +143,7 @@ $(document).ready(function(){
 });
 
   function createComentarios(comentarios){
-
-            var rendered = Mustache.render(templateComentario,{paquete:comentarios});
-       $("#div-com").html(rendered);
-     }
-
-
-
-
-  function partialRender(dir, functionDestino){
-    $.ajax({
-      url: dir,
-      method:"GET",
-      dataType: "html",
-      success: function(data){
-        functionDestino(data);
-      },
-      error: function(){
-        alert("FALLASTE");
-      }
-    });
+      var rendered = Mustache.render(templateComentario,{paquete:comentarios});
+      $("#div-com").html(rendered);
   }
 });

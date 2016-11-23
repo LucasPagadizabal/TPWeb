@@ -37,7 +37,7 @@ class CabaniaController{
 
   function checkSession(){
     if (isset($_SESSION["privilegio"])) {
-      return true;
+      return $_SESSION["userEmail"];
     }else{
       return false;
     }
@@ -63,6 +63,17 @@ class CabaniaController{
       $this->view->mostrarCabania($cabania,$session,$priv);
     }
 
+    }
+    function agregarImgCabExistente(){
+      $priv = $this->checkPrivilegio();
+      $imagenes = $_FILES["imagenes"];
+      $id_cabania = $_POST['id_cab'];
+      if (isset($imagenes)) {
+        $this->model->agregarImgCabExistente($id_cabania,$imagenes);
+        $cabania = $this->model->getCabania($id_cabania);
+        $session = $this->checkSession();
+        $this->view->mostrarCabania($cabania,$session,$priv);
+      }
     }
 
 }

@@ -51,7 +51,7 @@ class LoginController{
           session_destroy();
           session_start();
           $_SESSION['privilegio'] = $usuario["privilegio"];
-          //header("Location: index.php?action=home");
+          $_SESSION['userEmail'] = $usuario["email"];
           $tipoMsj = "ok";
           $this->view->mostrarForm($msj, $tipoMsj);
           die();

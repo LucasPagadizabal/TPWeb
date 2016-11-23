@@ -14,7 +14,11 @@
     <button class="nav-link btn btn-primary" href="cerrarSesion">LOG OUT</button>
       {if $priv == 1}
       <div class="panel alerta-danger">
-        Administrador
+        ADMINISTRADOR - {$sesion}
+     </div>
+     {else}
+     <div class="panel alerta-success">
+       Bienvenido, {$sesion}!
      </div>
       {/if}
   </div>

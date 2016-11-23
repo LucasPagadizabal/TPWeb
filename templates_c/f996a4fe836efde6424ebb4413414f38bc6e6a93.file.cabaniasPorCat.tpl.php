@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 03:52:05
+<?php /* Smarty version Smarty-3.1.14, created on 2016-11-23 17:23:29
          compiled from ".\templates\cabaniasPorCat.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:268395835045542e920-12143099%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:34035835c281821511-46161241%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '268395835045542e920-12143099',
+  'nocache_hash' => '34035835c281821511-46161241',
   'function' => 
   array (
   ),
@@ -26,9 +26,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_5835045557a8c0_30786391',
+  'unifunc' => 'content_5835c28188a797_13307617',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5835045557a8c0_30786391')) {function content_5835045557a8c0_30786391($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\projects\\TPWeb\\libs\\plugins\\modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_5835c28188a797_13307617')) {function content_5835c28188a797_13307617($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include 'C:\\xampp\\htdocs\\projects\\TPWeb\\libs\\plugins\\modifier.truncate.php';
 ?><div class="panel">
   <div class="col-md-offset-5">
     <label for="ajaxForm">Buscar cabaña por categoria</label>
