@@ -22,17 +22,20 @@ class CategoriaController{
   }
 
   function buscarCabaniasCat(){
-    $id_categoria = $_POST["id_categoria"];
-    //llega
-    $cabanias = $this->modelCategoria->buscarCabaniasCat($id_categoria);
-    $categorias = $this->getCategorias();
-    if (count($cabanias)>0) {
-      $mensaje = "Su busqueda fue exitosa!";
-    }else {
-      $mensaje = "No hay cabanias con esa categoria";
+    if (isset($_POST["id_categoria"])) {
+      $id_categoria = $_POST["id_categoria"];
+      //llega
+      $cabanias = $this->modelCategoria->buscarCabaniasCat($id_categoria);
+      $categorias = $this->getCategorias();
+      if (count($cabanias)>0) {
+        $mensaje = "Su busqueda fue exitosa!";
+      }else {
+        $mensaje = "No hay cabanias con esa categoria";
+      }
+
+      $this->view->mostrarCabaniasCat($cabanias,$mensaje,$categorias);
     }
 
-    $this->view->mostrarCabaniasCat($cabanias,$mensaje,$categorias);
   }
 
   function getCategorias(){
@@ -45,24 +48,46 @@ class CategoriaController{
   }
 
   function editarCategoria(){
-    $id_categoria = $_POST["data-idcategoria"];
-    $valorInput = $_POST["valorInput"];
-    $this->modelCategoria->editarCategoria($id_categoria,$valorInput);
-    $this->controllerAdmin->mostrarListaCabanias();
+    if ($this->checkPrivilegio()==1) {
+      $id_categoria = $_POST["data-idcategoria"];
+      $valorInput = $_POST["valorInput"];
+
+      if(isset($id_categoria,$valorInput) && (($id_categoria!="")&& ($valorInput!="")) ){
+        $this->modelCategoria->editarCategoria($id_categoria,$valorInput);
+        $this->controllerAdmin->mostrarListaCabanias();
+      }
+    }
   }
 
   function eliminarCategoria(){
-    $id_categoria = $_GET["id_categoria"];
-    $estrellas = $_GET["estrella"];
-    $this->modelCategoria->eliminarCategoria($id_categoria,$estrellas);
-    $this->controllerAdmin->mostrarListaCabanias();
+    if ($this->checkPrivilegio() == 1) {
+      if (isset($_GET["id_categoria"])&& ($_GET["id_categoria"] != "")) {
+        $id_categoria = $_GET["id_categoria"];
+        $this->modelCategoria->eliminarCategoria($id_categoria);
+        $this->controllerAdmin->mostrarListaCabanias();
+      }
+    }
   }
 
   function crearCategoria(){
-    $valor = $_POST["valorCategoria"];
-    $this->modelCategoria->crearCategoria($valor);
-    $this->controllerAdmin->mostrarListaCabanias();
+    if ($this->checkPrivilegio() == 1) {
+      if (isset($_POST["valorCategoria"]) && ($_POST["valorCategoria"]!="")) {
+        $valor = $_POST["valorCategoria"];
+        $this->modelCategoria->crearCategoria($valor);
+        $this->controllerAdmin->mostrarListaCabanias();
+      }
+    }
   }
+
+  function checkPrivilegio(){
+    if(!isset($_SESSION["privilegio"])){
+      $priv=0;
+    }else{
+      $priv = $_SESSION["privilegio"];
+    }
+    return $priv;
+  }
+
 
 }
 

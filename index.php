@@ -2,20 +2,28 @@
 
 require_once("config/configApp.php");
 require_once("controller/CabaniaController.php");
+require_once("controller/LoginController.php");
 require_once("controller/AdminController.php");
-//
 require_once("controller/CategoriaController.php");
+require_once ("controller/creadorBBDD.php");
 
+$creadorBBDD = new creadorBBDD();
+$creadorBBDD->crearBBDD();
 $CabaniaController = new CabaniaController();
 $AdminController = new AdminController();
-
-//
 $CategoriaController = new CategoriaController();
+$LoginController = new LoginController();
+//
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
   // Home del sitio
-  $CabaniaController->iniciar();
-  die();
+  if ($AdminController->checkBBDD()) {
+    $CabaniaController->iniciar();
+  }else {
+     header("Location: db");
+   }
+
+    die();
 }
 switch($_REQUEST[ConfigApp::$ACTION]){
 
@@ -60,6 +68,8 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   break;
 
 
+
+
   // ACTIONS DE CATEGORIA
 
 
@@ -87,16 +97,31 @@ switch($_REQUEST[ConfigApp::$ACTION]){
   $CategoriaController->crearCategoria();
   break;
 
-  case ConfigApp::$ACTION_EDITOR_BBDD:
-  $CabaniaController->editorBBDD();
+//login
+
+  case ConfigApp::$ACTION_CREAR_USUARIO:
+  $LoginController->crearUsuario();
+  break;
+  case ConfigApp::$ACTION_MOSTRAR_LOGIN:
+  $LoginController->mostrarPantallaLogin();
+  break;
+  case ConfigApp::$ACTION_LOGIN:
+  $LoginController->login();
+  break;
+  case ConfigApp::$ACTION_CERRAR_SESION:
+  $LoginController->cerrarSesion();
   break;
 
-  case ConfigApp::$ACTION_DELETE_BBDD:
-  $CabaniaController->deleteBBDD();
+  case ConfigApp::$ACTION_EDITAR_USUARIO:
+  $AdminController->editarUsuario();
   break;
 
-  case ConfigApp::$ACTION_CARGAR_BBDD:
-  $CabaniaController->cargarBBDD();
+  case ConfigApp::$ACTION_ELIMINAR_IMAGEN:
+  $CabaniaController->eliminarImagen();
+  break;
+
+  case ConfigApp::$ACTION_AGREGAR_IMG_CAB_EXISTENTE:
+  $CabaniaController->agregarImgCabExistente();
   break;
 }
 

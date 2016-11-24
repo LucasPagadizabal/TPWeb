@@ -1,0 +1,16 @@
+{{#paquete}}
+<div class="panel">
+<div class="row">
+      <div class="col-md-7">
+        {{texto}}
+      </div>
+      <div class="col-md-3">
+         Puntaje : {{puntaje}}
+      </div>
+      <div class="botonEliminarComent">
+        <a class="eliminarComentario col-md-2" id_comentario="{{id_comentario}}" id_cabania="{{id_cabania}}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+      </div>
+  </div>
+</div>
+
+{{/paquete}}

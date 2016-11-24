@@ -45,6 +45,12 @@ class CabaniaModel{
 
     $id_cabania = $this->db->lastInsertId();
 
+    $this->agregarImgCabExistente($id_cabania,$imagenes);
+  }
+
+
+
+  function agregarImgCabExistente($id_cabania,$imagenes){
     $max = sizeof($imagenes["name"]);
 
     for ($i=0; $i < $max; $i++) {
@@ -54,8 +60,6 @@ class CabaniaModel{
     $insertImagen->execute(array($path,$id_cabania));
   }
 }
-
-
   function getTipoCat($id_categoria) {
     $sentencia = $this->db->prepare("select estrella from categoria where id_categoria = ?");
     $sentencia->execute(array($id_categoria));
@@ -66,6 +70,8 @@ class CabaniaModel{
 
   function borrarCabania($id_cabania){
     $sentencia = $this->db->prepare("delete from cabania where id_cabania=?");
+    $sentencia->execute(array($id_cabania));
+    $sentencia = $this->db->prepare("delete from imagen where fk_id_cabania=?");
     $sentencia->execute(array($id_cabania));
   }
 
@@ -92,19 +98,17 @@ class CabaniaModel{
       foreach ($cabaniasPorCategoria as $key => $cabania) {
           $cabaniasPorCategoria[$key]['imagenes']=$this->getImagenes($cabania['id_cabania']);
       }
-
       return($cabaniasPorCategoria);
   }
 
-  function borrarBBDD(){
-    $borradoCategorias = $this->db->prepare("TRUNCATE TABLE categoria");
-    $borradoCategorias->execute();
-    $borradoCabania = $this->db->prepare("TRUNCATE TABLE cabania");
-    $borradoCabania->execute();
+  function eliminarImagen($id_imagen){
+    $sentencia = $this->db->prepare("delete from imagen where id_imagen=?");
+    $sentencia->execute(array($id_imagen));
   }
 
-  function cargarBBDD(){
-
+  function checkBBDD(){
+    $sentencia = $this->db->prepare("select count(*) from cabania");
+    return $sentencia->execute();
   }
 }
 ?>
