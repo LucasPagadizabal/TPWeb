@@ -5,26 +5,4 @@ define("DBPASS", "root");
 define("DBNAME", "");
 
 complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
-complejo");
  ?>

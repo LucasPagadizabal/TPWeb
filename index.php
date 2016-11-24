@@ -5,24 +5,25 @@ require_once("controller/CabaniaController.php");
 require_once("controller/LoginController.php");
 require_once("controller/AdminController.php");
 require_once("controller/CategoriaController.php");
+require_once ("controller/creadorBBDD.php");
 
+$creadorBBDD = new creadorBBDD();
+$creadorBBDD->crearBBDD();
 $CabaniaController = new CabaniaController();
 $AdminController = new AdminController();
 $CategoriaController = new CategoriaController();
 $LoginController = new LoginController();
-
 //
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
   // Home del sitio
-  if ($AdminController->checkBBDD()) {//chequeo si hay datos en la bbdd
+  if ($AdminController->checkBBDD()) {
     $CabaniaController->iniciar();
   }else {
-    header("Location: db");
-  }
-  //$CabaniaController->iniciar();
-  $AdminController->checkBBDD();
-  die();
+     header("Location: db");
+   }
+
+    die();
 }
 switch($_REQUEST[ConfigApp::$ACTION]){
 
